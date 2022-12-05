@@ -1,1 +1,1 @@
-# Coding40-Cypress
+My Cypress practice repository 
