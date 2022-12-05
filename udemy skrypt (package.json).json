@@ -1,0 +1,20 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "Automated software testing with Cypress",
+  "main": "node.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "keywords": [
+    "testing",
+    "cypress",
+    "automation"
+  ],
+  "author": "Łukasz Lebioda",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^2.7.1"
+  }
+}

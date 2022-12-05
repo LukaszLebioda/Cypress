@@ -1,0 +1,27 @@
+{
+  "name": "coding40-cypress",
+  "version": "1.0.0",
+  "description": "My Cypress practice folder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukaszLebioda/Coding40-Cypress.git"
+  },
+  "keywords": [
+    "Cypress",
+    "testing",
+    "automation"
+  ],
+  "author": "Łukasz Lebioda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LukaszLebioda/Coding40-Cypress/issues"
+  },
+  "homepage": "https://github.com/LukaszLebioda/Coding40-Cypress#readme",
+  "dependencies": {
+    "cypress": "^11.2.0"
+  }
+}
