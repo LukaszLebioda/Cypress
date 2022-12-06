@@ -1,12 +1,12 @@
 // test success & failure
-describe("My first simple test with Cypress", () => {
-    it("True should be True", () => {
-        expect(true).to.equal(true)
-    })
-    it("True should be True", () => {
-        expect(5).to.equal(10)
-    })
-  })
+// describe("My first simple test with Cypress", () => {
+//     it("True should be True", () => {
+//         expect(true).to.equal(true)
+//     })
+//     it("True should be True", () => {
+//         expect(5).to.equal(10)
+//     })
+//   })
 
 //   // cy.wait: implicit wait (optional) - if we want to wait more than default cypress waiting time to move on to the next test (next it)
 // it("should wait for 3 seconds", () => {
@@ -19,7 +19,15 @@ describe("My first simple test with Cypress", () => {
 //   })
 
 // cy.log: logs a text when a test is done:
-it("should do something", () => {
+it("should log a text", () => {
     cy.visit("https://books.toscrape.com/")
     cy.log("Page visited")
+})
+
+// cy.relod(): reloads the page:
+it("should reload the page", () => {
+    cy.visit("https://books.toscrape.com/")
+    cy.log("Before reload")
+    cy.reload()
+    cy.log("After reload")
 })
