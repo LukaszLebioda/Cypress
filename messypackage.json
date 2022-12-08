@@ -4,8 +4,11 @@
   "description": "Automated software testing with Cypress",
   "main": "node.js",
   "scripts": {
-    "cy:open": "cypress open",
-    "cy:run": "cypress run"
+      // "cy:open": "cypress open", 
+      // "cy:run": "cypress run"
+      // then: npm test
+    "cy:open": "cypress open", // npm run cy:open
+    "cy:run": "cypress run" // npm run cy:run
   },
   "keywords": [
     "testing",
