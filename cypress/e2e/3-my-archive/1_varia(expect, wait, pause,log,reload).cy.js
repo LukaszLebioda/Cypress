@@ -1,3 +1,5 @@
+// <reference types="cypress" /> (że niby dzięki temu pojawia się code autocompletion)
+
 // test success & failure
 // describe("My first simple test with Cypress", () => {
 //     it("True should be True", () => {
