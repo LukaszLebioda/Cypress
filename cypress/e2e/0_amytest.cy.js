@@ -27,6 +27,9 @@ describe("when navigate to the mountain weather page", () => {
             .scrollIntoView()
             .should("be.visible");
     })
+    it("should display the weather table on my mobile resolution", () => {
+        cy.viewport(393, 851)
+    })
    
 })
 

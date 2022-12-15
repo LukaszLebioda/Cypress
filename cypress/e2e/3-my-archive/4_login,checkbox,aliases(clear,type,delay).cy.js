@@ -10,6 +10,7 @@ describe("Loading a bank login form website", () => {
 // working with inputs (with delay option):
 
 describe("Working with inputs", () => {
+    // // login with predefinde fixture (patrz: /fixtures/user.json)
     it("should fill username", () => {
         cy.get("#user_login").clear()
         cy.get("#user_login").type("Invalid name", { delay: 100 })
