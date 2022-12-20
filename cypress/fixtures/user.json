@@ -1,4 +1,4 @@
 {
-    "username": "invalid username",
-    "password": "invalid password"
+    "username": "some invalid username",
+    "password": "some invalid password"
 }
