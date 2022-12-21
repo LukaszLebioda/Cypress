@@ -12,4 +12,7 @@ describe("Browser actions", () => {
         cy.clearCookies({log: true})
         cy.clearLocalStorage("your item", {log: true})
     })
+    it.skip("should skip this test", () => {
+        cy.visit("https://onet.pl")
+    })
 })
