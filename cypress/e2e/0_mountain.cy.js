@@ -1,8 +1,9 @@
-describe("when navigate to the mountain weather page", () => {
+describe("when navigate to the mountain weather page on my mobile, viewport: 393 x 851", () => {
 
     let mountainName = "Gerlach";
 
     it("should visit the page and make sure it loaded", () => {
+        cy.pause()
         cy.visit("https://www.mountain-forecast.com/", {timeout:10000});
         cy.title("include", "Mountain Weather");
         cy.url().should("include", "mountain-forecast")
@@ -23,47 +24,8 @@ describe("when navigate to the mountain weather page", () => {
         cy.get("@myFirstAlias").type(`${mountainName} {Enter}`, {delay:100});
     })
     it("should scroll down to weather forecast table", () => {
-        cy.get(".forecast-table-graph")
+        cy.get('.forecast-table__table-wrapper')
             .scrollIntoView()
-            .should("be.visible");
+            .should("be.visible")
     })
-    it("should display the weather table on my mobile resolution", () => {
-        cy.viewport(393, 851)
-    })
-   
 })
-
-
-// // working with inputs (with delay option):
-
-// describe("Working with inputs", () => {
-//     it("should fill username", () => {
-//         cy.get("#user_login").clear()
-//         cy.get("#user_login").type("Invalid name", { delay: 100 })
-//     })
-//     // // alias version
-//     // it("should fill password", () => {
-//     //     cy.get("#user_login").as("username")
-//     //     cy.get("@username").clear()
-//     //     cy.get("@username").type("Invalid password", { delay: 100 })
-//     it("should fill password", () => {
-//         cy.get("#user_password").clear()
-//         cy.get("#user_password").type("Invalid password", { delay: 100 })
-//     })
-//     // // alias version
-//     // it("should fill password", () => {
-//     //     cy.get("#user_password").as("password")
-//     //     cy.get("@password").clear()
-//     //     cy.get("@password").type("Invalid password", { delay: 100 })
-//     // })
-//     it("should mark the 'Keep me signed in' checkbox", () => {
-//         cy.get("input[type='checkbox']").click()
-//     })
-//     it("should submit the login form", () => {
-//         cy.contains("Sign in").click()
-//     })
-//     it("should display error message", () => {
-//         cy.get(".alert").should("be.visible")
-//             .and("contain", "Login and/or password are wrong")
-//     })
-// })
