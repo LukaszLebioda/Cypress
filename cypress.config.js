@@ -4,8 +4,8 @@ module.exports = defineConfig({
   e2e: {
     // baseUrl: "your url goes here", (jak pracujemy nad jedną stroną, to można tu ją zakodować)
     watchForFileChanges: true, // (po sejwie trzeba ręcznie uruchomić test)
-    viewportWidth: 393, // 1000 is default
-    viewportHeight: 851, // 600 is defalut 
+    viewportWidth: 1000, // 1000 is default
+    viewportHeight: 600, // 600 is defalut 
     waitForAnimations: true, // cypres should wait for animation to finish or not (true recommended)
     animationDistanceTreshold: 20, // number of pixels to be moved to consider an element an animation
     defaultCommandTimeout: 5000, // (defaultowo jest 4000)
