@@ -23,5 +23,8 @@
   "homepage": "https://github.com/LukaszLebioda/Coding40-Cypress#readme",
   "dependencies": {
     "cypress": "^11.2.0"
+  },
+  "devDependencies": {
+    "@cypress/xpath": "^2.0.3"
   }
 }

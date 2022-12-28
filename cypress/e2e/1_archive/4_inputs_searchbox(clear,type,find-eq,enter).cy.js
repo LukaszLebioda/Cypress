@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe("interacting with buttons", function() {
     it("visits a google home page", function() {
         cy.visit("https://www.google.pl/", {timeout: 10000})

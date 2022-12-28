@@ -31,7 +31,7 @@ describe("Implicit assertions", () => {
     })
 })
 
-// ---------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
 // IMPLICIT ASSERTIONS: SDET 2022
 
@@ -92,6 +92,7 @@ describe("test suite 5 COMPLETE", () => {
     })
     it("multiple element assertions version1", () => {
         cy.get("a").should("have.length", 5)
+        // or: cy.xpath("//a").should("have.length", 5)
     }) 
     it("multiple element assertions version2", () => {
         cy.get("a").its("length").should("eq", 5)
