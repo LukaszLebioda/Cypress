@@ -1,9 +1,5 @@
 // IMPLICIT ASSERTIONS (in-build assetions): should(), and()
 
-        //     .and("have.value", "")
-        // cy.get('[title="Szukaj"]').should("have.attr", "maxlength", "2048")
-
-
 // implicit assertions:
 describe("Implicit assertions", () => {
     it("should load the cypress playground page", () => {
