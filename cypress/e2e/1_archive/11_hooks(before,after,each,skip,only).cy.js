@@ -51,3 +51,39 @@ describe("Hooks practice", () => {
     // })
 
 })
+
+// some real example:
+// within the brackets can be every code, not necessarily coming from Cypress
+// we use hooks to set up test data or text context
+// we use hooks to seed or reset the database
+
+describe("Scroll on the page", () => {
+
+    before( () => {
+       // runs before all the tests inside describe block
+       // cy.visit is not in the context of scrolling up/down
+       // so we can use before
+       cy.visit("https://devexpress.github.io/testcafe/example/")
+    })
+    after( () => {
+       // runs after all the tests inside describe block
+       // e.g. test clean-up; clear cookies/local storage
+       cy.clearCookies()
+    })
+    beforeEach( () => {
+        // runs before each and every test inside describe block
+        // if we want to log sth or prepare some data
+        cy.log("log something")
+    })
+    afterEach( () => {
+        // runs after each and every test inside describe block
+        cy.log("log something")
+    })
+
+    it("should scroll down and up on the page", () => {
+        cy.wait(3000)
+        cy.get("#submit-button").scrollIntoView()
+        cy.wait(3000)
+        cy.get("header").scrollIntoView()
+    })
+})
