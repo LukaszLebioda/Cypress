@@ -4,12 +4,13 @@ describe('when navigate to the online bookstore page', () => {
     let dummyPhrase = "sdgrdthfhjgfhkgkgh";
     let searchbox = "#headerSearchInput";
     let website = "https://bonito.pl/";
-  
+
+
     beforeEach(() => {
         cy.visit(website);
         cy.url().should("contain", "bonito");
     })
-  
+
     it("website loaded and searchbox with placeholder visible", () => {
         cy.get(searchbox).should("be.visible");
         cy.get(searchbox).should("have.attr", "placeholder", "Czego szukasz?");
