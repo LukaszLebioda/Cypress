@@ -2,7 +2,7 @@
 // find
 // intercept
 
-// ------------------------------------------
+// ---------------------------------------------------------
 
 // alert (unfinished)
 
@@ -10,7 +10,7 @@
 //     expect(txt).to.be.equal("message")
 // })
 
-// ------------------------------------------
+// ----------------------------------------------------------
 
 // non-working example from BITFUMES!!!
 
@@ -53,3 +53,8 @@
 //     })
 // })
 
+// możemy też wrzucić całe to body do np. "./fixtures/posts.json" a w powyższym przykładzie zamiast BODY wpisać FIXTURE: "posts.json":
+
+//         cy.intercept("get", "https://someadress.com/api.posts", {
+//           fixture: "posts.json"
+// })

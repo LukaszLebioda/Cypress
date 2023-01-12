@@ -6,6 +6,8 @@
 // UDEMY: http://zero.webappsecurity.com/login.html
 // UDEMY: https://devexpress.github.io/testcafe/example/
 // SDET 2022: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login (login: Admin, password: admin123)
+// SDET 2022: https://itera-qa.azurewebsites.net/home/automation
+// SDET 2022: https://www.zoho.com/commerce/free-demo.html
 
 // cy.wait: implicit wait (optional) - if we want to wait more than default cypress waiting time to move on to the next test (next it)
 it("should wait for 3 seconds", () => {
