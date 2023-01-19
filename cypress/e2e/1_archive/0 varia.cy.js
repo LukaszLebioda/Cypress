@@ -1,18 +1,11 @@
 /*
 INDEX:
-code completion (reference)
 headless mode
+intelligent code completion (reference)
+mocha syntax
 practice websites
 selectors
 xpath installation
-*/
-
-// ----------------------------
-
-/*
-CODE COMPLETION (REFERENCE)
-
-<reference types="cypress" /> (dzięki temu pojawia się code autocompletion), ale my to mamy hardcoded gdzieś w ustawieniach
 */
 
 // ----------------------------
@@ -29,6 +22,32 @@ to run a single test we have to provide a spec name and its path:
 npx cypress run --spec="cypress/e2e/specfilename.cy.js"
 
 */
+
+// ----------------------------
+
+/*
+INTELLIGENT CODE COMPLETION (REFERENCE)
+
+<reference types="cypress" /> (dzięki temu pojawia się code autocompletion), ale my to mamy hardcoded w "commands.js" (chociaż to chyba nie działa) i przede wszystkim stworzyliśmy plik "tsconfij.json", w którym zapisaliśmy pewien kod, i dzięki temu intelligent code completion działa 
+*/
+
+// ----------------------------
+
+/* MOCHA SYNTAX:
+
+describe("test block", () => {
+    it("test suite", () => {
+        cy.function("parameter")
+    })
+})
+
+or:
+
+context("test block", () => {
+    specify("test suite", () => {
+        cy.function("parameter")
+    })
+})
 
 // ----------------------------
 

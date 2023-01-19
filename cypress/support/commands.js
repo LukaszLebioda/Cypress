@@ -32,7 +32,7 @@
 // -------------------------------------------------
 
 // for Cypress commands (otherwise we would have to write this in every file.cy.js file)
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
 // Udemy custom command
 Cypress.Commands.add("login", (username, password) => {
