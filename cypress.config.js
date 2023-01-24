@@ -13,7 +13,7 @@ module.exports = defineConfig({
     pageLoadTimeout: 60000, // recommended
     requestTimeout: 15000, // recommended
     responseTimeout: 15000, // recommended
-    video: true, // defaultowo jest false' true - nagrywa nasze testy w headless mode;
+    video: true, // defaultowo jest false, true - nagrywa nasze testy w headless mode;
     failOnStatusCode: false,
     // excludeSpecPattern: "**/2-advanced-examples/*", (wyklucza z wykonywania testu konkretne pliki / foldery)
     setupNodeEvents(on, config) {

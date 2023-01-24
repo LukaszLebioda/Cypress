@@ -4,6 +4,7 @@ headless mode
 intelligent code completion (reference)
 mocha syntax
 practice websites
+scripts (npm vs npx)
 selectors
 xpath installation
 */
@@ -68,7 +69,23 @@ https://www.zoho.com/commerce/free-demo.html
 https://www.dummyticket.com/dummy-ticket-for-visa-application/
 */
 
-// ----------------------------
+// ------------------------------
+
+/* SCRIPTS (NPM vs NPX):
+
+example:
+
+"scripts": {
+    "cy:open": "cypress open", // npx cypress open (without script)
+    "cy:run": "cypress run" // npm run cy:run (with script)
+  },
+
+so we can open cypress: npx cypress open (it's universal)
+or we can write a script, and with the example above: npm run cy:open
+
+  */
+
+//--------------------------------
 
 /* 
 SELECTORS:
