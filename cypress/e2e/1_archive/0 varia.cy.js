@@ -6,7 +6,7 @@ mocha syntax
 practice websites
 scripts (npm vs npx)
 selectors
-xpath installation
+xpath installation & example
 */
 
 // ----------------------------
@@ -108,6 +108,11 @@ XPATH INSTALLATION:
 1) install XPath plugin: npm install -D @cypress/xpath
 2) e2e.js: require('@cypress/xpath');
 3) https://selectorshub.com/: install XPath selector hub for Chrome;
+
+syntax example:
+cy.xpath("//h5").should("be.visible").and("have.length", 1)
+cy.xpath("//label[@class='oxd-label']").should("have.length", 2)
+
 */
 
 // ----------------------------
