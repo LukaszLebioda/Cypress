@@ -16,11 +16,15 @@ HEADLESS MODE
 
 npx cypress run (instead of npx cypress open)
 
-by default runs all the tests;
+by default it's Electron browser
+by default it runs all the tests;
 by default tests are recorded and store in 'video' folder (this can be changed in cypress.config.js - video: true)
 
 to run a single test we have to provide a spec name and its path:
-npx cypress run --spec="cypress/e2e/specfilename.cy.js"
+npx cypress run --spec "cypress/e2e/specfilename.cy.js"
+
+to run a single test in a specific browser we add "--browser name":
+npx cypress run --browser chrome --spec "cypress/e2e/specfilename.cy.js"
 
 */
 

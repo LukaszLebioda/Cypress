@@ -14,6 +14,7 @@ describe("Implicit assertions", () => {
         cy.get('#query-btn')
             .should("contain", "Button")
             .and("have.class", "query-btn btn btn-primary")
+            // .should("have.attr")
             // .should("have.text")
             // .should("have.html")
             .and("be.visible")

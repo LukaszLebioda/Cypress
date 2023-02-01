@@ -40,8 +40,9 @@ beforeEach (before each test spec)
     testExecution ()
 afterEach (after each test script)
 after (once, after the last test spec)
-skip - skips test
-only - runs only this test
+
+SKIP - skips test
+ONLY - runs only this test
 */
 
 describe.skip("Scroll on the page", () => {
