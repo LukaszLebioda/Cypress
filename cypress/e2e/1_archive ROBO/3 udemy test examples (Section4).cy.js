@@ -1,4 +1,4 @@
-// SEARCHBOX
+// 1 SEARCHBOX
 
 describe("searchbox test", () => {
 
@@ -16,7 +16,7 @@ describe("searchbox test", () => {
     })
 })
 
-// FORGOTTEN PASSWORD TEST
+// 2 FORGOTTEN PASSWORD TEST
 
 describe("password test", () => {
 
@@ -44,7 +44,7 @@ describe("password test", () => {
 
 })
 
-// NAVBAR TEST
+// 3 NAVBAR TEST
 
 describe.only("Navbar test", () => {
 
@@ -70,7 +70,7 @@ describe.only("Navbar test", () => {
 })
 
 
-// FEEDBACK FORM
+// 4 FEEDBACK FORM
 
 describe("Feedback Form Test", () => {
 

@@ -22,11 +22,9 @@ cy.get()
 cy.xpath()
 */
 
-// LOGIN 
-
 // LOGIN (variables, aliases, fixtures)
 
-/* FIXTURES Used:
+/* FIXTURES Used (./fixtures/credentials.json):
 {
     "username_ID": "username",
     "password_ID": "password"
@@ -53,7 +51,7 @@ describe("Login / Logout test", () => {
         cy.get("#login_form").should("be.visible")
         cy.get("#user_login").clear().type(invalidUsername, {delay: 100})
         cy.get("#user_password").clear().type(invalidPassword, {delay: 100})
-        cy.get("#user_remember_me").check() // optional
+        cy.get("#user_remember_me").check() // optional checkbox
         cy.get("input[name='submit']").click()
 
     })
