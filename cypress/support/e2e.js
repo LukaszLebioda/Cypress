@@ -22,3 +22,6 @@ import './commands'
 // for XPath
 require('@cypress/xpath');
 
+// for cypress-failed-log
+require('cypress-failed-log');
+

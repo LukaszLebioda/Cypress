@@ -1,0 +1,13 @@
+{
+  "specName": "cypress\\e2e\\practice_now.cy.js",
+  "title": "should interact with an authenticated alert - method 1",
+  "suiteName": "authenticated alert",
+  "testName": "authenticated alert should interact with an authenticated alert - method 1",
+  "testError": "Timed out retrying after 5000ms: object tested must be an array, a map, an object, a set, a string, or a weakset, but object given",
+  "testCommands": [
+    "visit https://the-internet.herokuapp.com/basic_auth",
+    "xhr  GET https://298279967.log.optimizely.com/event?a=298279967&d=298279967&y=false&n=https://the-internet.herokuapp.com/basic_auth&u=oeu1677438153019r0.2779727521256272&wxhr=true&t=1677438153031&f=298349752,318188263",
+    "request https://the-internet.herokuapp.com/basic_auth, {auth: {username: admin, password: admin}}",
+    "get div[class='example'] p"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "specName": "cypress\\e2e\\1 interacting with elements.cy.js",
+  "title": "should interact with a confirmation alert 1 - 'cancel' manually clicked",
+  "suiteName": "test 3 - alerts, screenshots, scrolling",
+  "testName": "test 3 - alerts, screenshots, scrolling should interact with a confirmation alert 1 - 'cancel' manually clicked",
+  "testError": "Timed out retrying after 5000ms: expected '<p#result>' to have text 'You clicked: Cancel', but the text was 'You clicked: Ok'",
+  "testCommands": [
+    "get button[onclick='jsConfirm()']",
+    "click ",
+    "assert expected **I am a JS Confirm** to include **I am a JS Confirm**",
+    "confirm I am a JS Confirm",
+    "get #result",
+    "assert expected **<p#result>** to have text **You clicked: Cancel**, but the text was **You clicked: Ok**"
+  ]
+}

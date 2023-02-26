@@ -6,22 +6,6 @@ https://react-redux.realworld.io/#/login?_k=5jewux (qaboxletstest@gmail.com; pas
 http://zero.webappsecurity.com/login.html
 */
 
-/* 
-cy.visit 
-cy.url 
-cy.title 
-
-    cy.reload()
-    cy.log("After reload the test is continued")
-    cy.pause()
-    cy.wait(2000)
-    cy.clearCookies({log: true})
-    cy.clearLocalStorage("your item", {log: true})
-
-cy.get()
-cy.xpath()
-*/
-
 // LOGIN (variables, aliases, fixtures)
 
 /* FIXTURES Used (./fixtures/credentials.json):
@@ -31,7 +15,7 @@ cy.xpath()
 }
 */
 
-describe("Login / Logout test", () => {
+describe("Login / Logout test 1", () => {
 
     let invalidUsername = "some username";
     let invalidPassword = "some password";
@@ -91,7 +75,42 @@ describe("Login / Logout test", () => {
 
 })
 
+describe.skip("Login / Logout test 1", () => {
 
+    let username = "wrong_username";
+    // let password = "wrong_password";
+
+    before( () => {
+        cy.visit("http://zero.webappsecurity.com/login.html", { timeout: 10000 });
+        cy.url().should("include", "webappsecurity.com");
+    } )
+
+    after ( () => {
+            cy.clearCookies( { log: true } );
+            cy.clearLocalStorage("your item",  { log: true } );
+    })
+
+    it("should login to the bank account - username", () => {
+        // alias example
+        cy.get("#user_login").as("whateveraliaswewant");
+        cy.get("@whateveraliaswewant").clear().type(username, { delay: 100 });
+    })
+    it("should login to the bank account - password", () => {
+        cy.get("#user_password").clear().type("some password", { delay: 100 });
+    })
+    it("should login to the bank account - checkbox", () => {
+        cy.get("#user_remember_me").click();
+    })
+    it("should login to the bank account - submit button", () => {
+        cy.get("input[type='submit']").click(); // cy.contains("Sign in").click();
+    })
+    it("should login to the bank account - error message", () => {
+        cy.get(".alert-error")
+            .should("be.visible")
+            .and("contain", "Login and/or password are wrong.");
+    })
+
+})
   
 
 

@@ -3,7 +3,7 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   e2e: {
     // baseUrl: "your url goes here", (jak pracujemy nad jedną stroną, to można tu ją zakodować)
-    watchForFileChanges: true, // (po sejwie trzeba ręcznie uruchomić test)
+    watchForFileChanges: true, // (jeśli false, to po po sejwie trzeba ręcznie uruchomić test)
     viewportWidth: 1000, // 1000 is default
     viewportHeight: 600, // 600 is defalut 
     waitForAnimations: true, // cypres should wait for animation to finish or not (true recommended)
@@ -13,11 +13,17 @@ module.exports = defineConfig({
     pageLoadTimeout: 60000, // recommended
     requestTimeout: 15000, // recommended
     responseTimeout: 15000, // recommended
-    video: true, // defaultowo jest false, true - nagrywa nasze testy w headless mode;
+    video: false, // defaultowo jest false, true - nagrywa nasze testy w headless mode;
     failOnStatusCode: false,
     // excludeSpecPattern: "**/2-advanced-examples/*", (wyklucza z wykonywania testu konkretne pliki / foldery)
+    // theme: "dark", (for dark theme)
+    // darkMediaQuery: true, (for dark theme)
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      // https://github.com/bahmutov/cypress-failed-log
+      require('cypress-failed-log/on')(on)
     },
   },
 });
+
+
+

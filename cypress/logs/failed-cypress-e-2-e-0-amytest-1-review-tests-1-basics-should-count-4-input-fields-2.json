@@ -1,0 +1,12 @@
+{
+  "specName": "cypress\\e2e\\0_amytest1.cy.js",
+  "title": "should count 4 input fields 2",
+  "suiteName": "review tests 1 - basics",
+  "testName": "review tests 1 - basics should count 4 input fields 2",
+  "testError": "Timed out retrying after 5000ms: expected 4 to equal 8",
+  "testCommands": [
+    "get input",
+    "its .length",
+    "assert expected **4** to equal **8**"
+  ]
+}

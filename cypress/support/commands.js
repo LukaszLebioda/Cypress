@@ -34,26 +34,25 @@
 // for Cypress commands (otherwise we would have to write this in every file.cy.js file)
 /// <reference types="cypress" />
 
-// Udemy custom command
-Cypress.Commands.add("login", (username, password) => {
-    cy.clearCookies()
-    cy.clearLocalStorage()
-    cy.get("#user_login").type(username, {delay: 100})
-    cy.get("#user_password").type(password, {delay: 100})
-    cy.get("#user_remember_me").click()
-    cy.contains("Sign in").click()
+// my custom command to load the page
+Cypress.Commands.add("myvisit", (enterUrl, checkUrl, element) => {
+    cy.visit(enterUrl, { timeout: 10000 });
+    cy.url().should("include", checkUrl);
+    cy.get(element).should("be.visible");
 })
 
-// my custom command
-Cypress.Commands.add("myvisit", (enterUrl, checkUrl, element) => {
-    it("should load correct URL", () => {
-        cy.visit(enterUrl, { timeout: 10000 })
-    })
-    it("should check correct URL", () => {
-        cy.url().should("include", checkUrl)
-    })
-    it("should check for correct element on the page", () => {
-        cy.get(element).should("be.visible") 
-    })
+// my custom command to login
+Cypress.Commands.add("mylogin", (username, password) => {
+    cy.clearCookies();
+    cy.clearLocalStorage();
+    cy.get("#user_login").clear().type(username);
+    cy.get("#user_password").clear().type(password);
+    cy.get("#user_remember_me").click();
+    cy.get("input[type='submit']").click();
+    cy.contains("username").should("be.visible");
 })
+
+
+
+
 

@@ -27,6 +27,7 @@
     "prettier": "^2.8.3"
   },
   "devDependencies": {
-    "@cypress/xpath": "^2.0.3"
+    "@cypress/xpath": "^2.0.3",
+    "cypress-failed-log": "^2.10.0"
   }
 }

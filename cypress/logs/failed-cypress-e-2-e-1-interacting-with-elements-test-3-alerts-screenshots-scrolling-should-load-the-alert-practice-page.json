@@ -1,0 +1,15 @@
+{
+  "specName": "cypress\\e2e\\1 interacting with elements.cy.js",
+  "title": "should load the alert practice page",
+  "suiteName": "test 3 - alerts, screenshots, scrolling",
+  "testName": "test 3 - alerts, screenshots, scrolling should load the alert practice page",
+  "testError": "The following error originated from your application code, not from Cypress.\n\n  > \n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.",
+  "testCommands": [
+    "visit https://the-internet.herokuapp.com/javascript_alerts",
+    "xhr  GET https://298279967.log.optimizely.com/event?a=298279967&d=298279967&y=false&n=https://the-internet.herokuapp.com/javascript_alerts&u=oeu1677402525536r0.7629747148836212&wxhr=true&t=1677402525548&f=298349752,318188263",
+    "request https://the-internet.herokuapp.com/javascript_alerts",
+    "uncaught exception TypeError: ",
+    "uncaught exception ReferenceError: Foundation is not defined",
+    "uncaught exception ReferenceError: $ is not defined"
+  ]
+}
