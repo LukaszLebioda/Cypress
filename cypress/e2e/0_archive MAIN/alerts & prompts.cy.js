@@ -1,3 +1,5 @@
+// ALERTS & PROMPTS
+
 /* there are 4 js alerts & prompts: 
 1) regular (some text + OK button)
 2) confirmation (some text + OK button + cancel button)

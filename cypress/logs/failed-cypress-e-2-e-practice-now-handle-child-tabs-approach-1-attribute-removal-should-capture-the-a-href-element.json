@@ -1,0 +1,15 @@
+{
+  "specName": "cypress\\e2e\\practice_now.cy.js",
+  "title": "should capture the 'a href' element",
+  "suiteName": "handle child tabs - approach 1 (attribute removal",
+  "testName": "handle child tabs - approach 1 (attribute removal should capture the 'a href' element",
+  "testError": "Timed out retrying after 5000ms: expected 'https://the-internet.herokuapp.com/windows' to include 'windows/new'",
+  "testCommands": [
+    "visit https://the-internet.herokuapp.com/windows",
+    "xhr  GET https://298279967.log.optimizely.com/event?a=298279967&d=298279967&y=false&n=https://the-internet.herokuapp.com/windows&u=oeu1677532660580r0.20698032489580687&wxhr=true&t=1677532660585&f=298349752,318188263",
+    "get .example a",
+    "url ",
+    "assert expected **https://the-internet.herokuapp.com/windows** to include **windows/new**",
+    "request "
+  ]
+}
