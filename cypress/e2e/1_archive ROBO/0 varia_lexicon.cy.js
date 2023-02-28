@@ -1,12 +1,27 @@
 /*
 INDEX:
+failed-log plugin
 headless mode
 intelligent code completion (reference)
 mocha syntax
-practice websites
 scripts (npm vs npx)
 selectors
 xpath installation & example
+*/
+
+// ----------------------------
+/*
+FAILED-LOG PLUGIN
+
+./cypress.config.js:
+        setupNodeEvents(on, config) {
+            // https://github.com/bahmutov/cypress-failed-log
+            require('cypress-failed-log/on')(on)
+        },
+
+./e2e.js:
+        require('cypress-failed-log');
+
 */
 
 // ----------------------------
@@ -55,25 +70,6 @@ context("test block", () => {
 })
 
 // ----------------------------
-
-/* 
-PRACTICE WEBSITES:
-
-http://example.com/
-https://books.toscrape.com/
-http://zero.webappsecurity.com/login.html
-https://devexpress.github.io/testcafe/example/
-https://itera-qa.azurewebsites.net/home/automation
-
-LOGIN:
-https://opensource-demo.orangehrmlive.com/web/index.php/auth/login (login: Admin, password: admin123)
-
-INPUTS:
-https://www.zoho.com/commerce/free-demo.html
-https://www.dummyticket.com/dummy-ticket-for-visa-application/
-*/
-
-// ------------------------------
 
 /* SCRIPTS (NPM vs NPX):
 

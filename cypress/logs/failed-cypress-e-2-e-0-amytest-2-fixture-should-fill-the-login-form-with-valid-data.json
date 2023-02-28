@@ -1,8 +1,0 @@
-{
-  "specName": "cypress\\e2e\\0_amytest2.cy.js",
-  "title": "should fill the login form with valid data",
-  "suiteName": "fixture",
-  "testName": "fixture should fill the login form with valid data",
-  "testError": "testingdata is not defined",
-  "testCommands": []
-}

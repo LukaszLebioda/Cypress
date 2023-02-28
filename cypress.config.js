@@ -16,12 +16,12 @@ module.exports = defineConfig({
     video: false, // defaultowo jest false, true - nagrywa nasze testy w headless mode;
     failOnStatusCode: false,
     // excludeSpecPattern: "**/2-advanced-examples/*", (wyklucza z wykonywania testu konkretne pliki / foldery)
-    // theme: "dark", (for dark theme)
-    // darkMediaQuery: true, (for dark theme)
+    
     setupNodeEvents(on, config) {
       // https://github.com/bahmutov/cypress-failed-log
       require('cypress-failed-log/on')(on)
     },
+
   },
 });
 

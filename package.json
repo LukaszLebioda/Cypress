@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
-    "cypress-failed-log": "^2.10.0"
+    "cypress-failed-log": "^2.10.0",
+    "cypress-iframe": "^1.0.1"
   }
 }

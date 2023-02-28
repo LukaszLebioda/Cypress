@@ -1,8 +1,0 @@
-{
-  "specName": "cypress\\e2e\\0_amytest2.cy.js",
-  "title": "should login with custom command",
-  "suiteName": "login with custom command",
-  "testName": "login with custom command should login with custom command",
-  "testError": "cy.buzzyname is not a function",
-  "testCommands": []
-}
