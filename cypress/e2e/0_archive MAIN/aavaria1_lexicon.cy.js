@@ -41,6 +41,9 @@ npx cypress run --spec "cypress/e2e/specfilename.cy.js"
 to run a single test in a specific browser we add "--browser name":
 npx cypress run --browser chrome --spec "cypress/e2e/specfilename.cy.js"
 
+to run a single test in a specific browser in headless mode we add "--headless":
+npx cypress run --headless --browser chrome --spec "cypress/e2e/specfilename.cy.js"
+
 */
 
 // ----------------------------
