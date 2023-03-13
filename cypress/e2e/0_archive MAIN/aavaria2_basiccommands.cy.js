@@ -2,11 +2,13 @@
 cy.get();
 cy.pause();
 cy.title();
+cy.url();
 cy.visit();
 cy.wait();
 */
 
 /* ADVANCED:
+cy.document(text/html, UTF-8)
 cy.location("protocol", "host = hostname", "pathname");
 cy.screenshot (full page or single element);
 cy.scrollIntoView();
@@ -27,7 +29,7 @@ describe("loading the page & asserting", () => {
   // VISIT, URL, TITLE
   it("should load books-to-scrape 'Travel' website", () => {
     cy.visit("https://books.toscrape.com/catalogue/category/books/travel_2/index.html", { timeout: 10000 });
-    cy.url().should("include", "travel"); // contain, eq, equal
+    cy.url().should("include", "travel"); // contain, contains, eq, equal
     cy.title().should("eq", "Travel | Books to Scrape - Sandbox");
   })
 
@@ -75,6 +77,13 @@ describe("loading the page & asserting", () => {
     cy.location("protocol").should("contains", "https");
     cy.location("host").should("equal", "books.toscrape.com");
     cy.location("pathname").should("equal", "/catalogue/category/books/travel_2/index.html");
-})
+    // this pathname option is often used to check path params after redirection
+  })
+
+  // DOCUMENT
+  it("should be written in html and have UTF coding implemented", () => {
+    cy.document().its("contentType").should("equal", "text/html");
+    cy.document().should("have.property", "charset").and("equal", "UTF-8");
+  })
   
 })

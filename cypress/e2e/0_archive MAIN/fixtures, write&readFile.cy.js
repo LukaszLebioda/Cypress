@@ -27,7 +27,7 @@ describe.skip("login with fixtures", () => {
 
 })
 
-// READ / WRITE FILE
+// READ FILE & WRITE FILE
 
 describe.skip("Write / Read data into JSON file / txt file", () => {
 
