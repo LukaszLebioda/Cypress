@@ -13,9 +13,9 @@ describe.skip("login with fixtures", () => {
     })
 
     it("should try to login with invalid credentials", () => {
-        cy.fixture("myFixtures/credentials.json").then((credentials) => {
-            let username = credentials.username;
-            let password = credentials.password;
+        cy.fixture("myFixtures/credentials.json").then( (whatever) => {
+            let username = whatever.username;
+            let password = whatever.password;
 
             cy.get("input#user_login").clear().type(username);
             cy.get("#user_password").clear().type(password);

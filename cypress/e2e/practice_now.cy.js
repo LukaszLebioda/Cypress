@@ -1,59 +1,48 @@
-describe("Login / Logout test", () => {
-    
-    let invalidUsername = "some username";
-    let invalidPassword = "some password";
-    const errorMessage = "Login and/or password are wrong.";
-    
-    before( () => {
-        cy.visit("http://zero.webappsecurity.com/index.html")
-        cy.url().should("include", "index.html")
-        cy.title().should("equal", "Zero - Personal Banking - Loans - Credit Cards") 
-        cy.get("#signin_button").click()
+// FIXTURES
+
+// {
+//     "validUsername": "username",
+//     "validPassword": "password",
+//     "invalidUsername": "invalid username",
+//     "invalidPassword": "invalid password"
+// }
+
+// contain.text?
+// assertion url / location / pathname?
+// readfile, writefile
+
+describe("login with fixtures", () => {
+
+    beforeEach( () => {
+        cy.visit("http://zero.webappsecurity.com/login.html");
+        cy.url().should("include", "login.html");
     })
 
-    // it("should create json file with login data", () => {
-    //     cy.writeFile("credentials.json", { username_ID: "username", password_ID: "password"});
-    // })
+    it("should try to login with valid credentials", () => {
+        cy.fixture("myFixtures/credentials.json").then( (whatever) => {
+            let username = whatever.username;
+            let password = whatever.password;
 
-    it("should try to login with invalid data", () => {
-        cy.get("#login_form").should("be.visible")
-        cy.get("#user_login").clear().type(invalidUsername, {delay: 100})
-        cy.get("#user_password").clear().type(invalidPassword, {delay: 100})
-        cy.get("#user_remember_me").check() // optional
-        cy.get("input[name='submit']").click()
-    })
-
-    it("should display error message", () => {
-        cy.get(".alert-error")
-            .should("exist")
-            .and("contain", errorMessage)
-    })
-
-    it("should login to the application", () => {
-
-        // fixtures
-        cy.fixture("myFixtures/credentials").then(credentials => {
-            const username = credentials.username_ID;
-            const password = credentials.password_ID; 
-
-            // aliases
-            cy.get("#user_login").as("loginInput")
-            cy.get("@loginInput").clear().type(username, {delay: 100})
-            cy.get("#user_password").as("passwordInput")
-            cy.get("@passwordInput").clear().type(password, {delay: 100})
-
-            cy.get("#user_remember_me").check() // optional
-            cy.get("input[name='submit']").click()
+            cy.get("input#user_login").clear().type(username);
+            cy.get("#user_password").clear().type(password);
+            cy.get("input[type='submit']").click();
+            // cy.contains("Login and/or password are wrong.");
+            cy.get(".alert").should("contain", "Login and/or password are wrong.")
         })
-
-        cy.get("ul.nav-tabs").should("be.visible")
-        
     })
 
-    it("should logout from the application", () => {
-        cy.contains("username").click()
-        cy.get("#logout_link").click()
-        cy.url().should("include", "index.html")
+    it("should try to login with invalid credentials", () => {
+        cy.fixture("myFixtures/credentials.json").then( (whatever) => {
+            let username = whatever.username;
+            let password = whatever.password;
+
+            cy.get("input#user_login").clear().type(username);
+            cy.get("#user_password").clear().type(password);
+            cy.get("input[type='submit']").click();
+            // cy.contains("Login and/or password are wrong.");
+            cy.get(".alert").should("contain", "Login and/or password are wrong.")
+        })
     })
 
 })
+
