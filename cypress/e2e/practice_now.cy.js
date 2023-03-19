@@ -1,48 +1,25 @@
-// FIXTURES
+// 1) beforeEach - one url, then suburl's only;
+// 2) then() - allows to work with the subject yielded by a previous command;
+// BDD assertion: expect(url).to.contains("/click");
 
-// {
-//     "validUsername": "username",
-//     "validPassword": "password",
-//     "invalidUsername": "invalid username",
-//     "invalidPassword": "invalid password"
-// }
+describe("basics", () => {
 
-// contain.text?
-// assertion url / location / pathname?
-// readfile, writefile
-
-describe("login with fixtures", () => {
-
-    beforeEach( () => {
-        cy.visit("http://zero.webappsecurity.com/login.html");
-        cy.url().should("include", "login.html");
+    
+    /*1*/beforeEach( () => {
+        cy.visit("http://uitestingplayground.com/textinput");
     })
 
-    it("should try to login with valid credentials", () => {
-        cy.fixture("myFixtures/credentials.json").then( (whatever) => {
-            let username = whatever.username;
-            let password = whatever.password;
-
-            cy.get("input#user_login").clear().type(username);
-            cy.get("#user_password").clear().type(password);
-            cy.get("input[type='submit']").click();
-            // cy.contains("Login and/or password are wrong.");
-            cy.get(".alert").should("contain", "Login and/or password are wrong.")
+    it("visit1", () => {
+        cy.visit("/click");
+        /*2*/cy.url().then( (url) => {
+            cy.log(`The URL is: ${url}`);
+            /*3*/expect(url).to.contains("/click");
         })
+        
+        
     })
-
-    it("should try to login with invalid credentials", () => {
-        cy.fixture("myFixtures/credentials.json").then( (whatever) => {
-            let username = whatever.username;
-            let password = whatever.password;
-
-            cy.get("input#user_login").clear().type(username);
-            cy.get("#user_password").clear().type(password);
-            cy.get("input[type='submit']").click();
-            // cy.contains("Login and/or password are wrong.");
-            cy.get(".alert").should("contain", "Login and/or password are wrong.")
-        })
+    it("visit2", () => {
+        cy.visit("/textinput")
     })
 
 })
-

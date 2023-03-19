@@ -1,5 +1,6 @@
 /*
 INDEX:
+baseUrl
 failed-log plugin
 headless mode
 intelligent code completion (reference)
@@ -7,6 +8,13 @@ mocha syntax
 scripts (npm vs npx)
 selectors
 xpath installation & example
+*/
+
+// ----------------------------
+/* BASE URL
+1) package.json: "cy:openBase": "cypress open --config baseUrl=http://uitestingplayground.com"
+2) cypress.config.js: e2e: { baseUrl: "http://uitestingplayground.com" }
+3) testspec.cy.js: cy.visit("/textinput")
 */
 
 // ----------------------------
