@@ -16,7 +16,7 @@ describe("TypeScript in Cypress", () => {
         cy.log(add(3,4))
     });
 
-    // INTERFACE (it' like creating a new type)
+    // INTERFACE (it's like creating a new type)
     interface User {
         username:string;
         password:string;

@@ -116,6 +116,7 @@ cy.get("input.class[attribute='value'") - gets tag of class of attribute with va
 /*
 XPATH INSTALLATION:
 
+0) find XPath plugin: "https://github.com/cypress-io/cypress/tree/develop/npm/xpath"
 1) install XPath plugin: npm install -D @cypress/xpath
 2) e2e.js: require('@cypress/xpath');
 3) https://selectorshub.com/: install XPath selector hub for Chrome;
@@ -123,6 +124,10 @@ XPATH INSTALLATION:
 syntax example:
 cy.xpath("//h5").should("be.visible").and("have.length", 1)
 cy.xpath("//label[@class='oxd-label']").should("have.length", 2)
+
+in the console:
+no xpath: $("h3")
+xpath: Sx("//h3")
 
 */
 

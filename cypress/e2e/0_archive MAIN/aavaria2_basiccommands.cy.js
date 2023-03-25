@@ -59,6 +59,13 @@ describe("loading the page & asserting", () => {
       cy.get(".product_pod").should("have.length", booksLength); 
   })
 
+  // LENGTH OF ELEMENTS (with variable)
+  it.skip("should display correct number of books", () => {
+    cy.get(".product_pod").as("item")
+    
+    cy.get("@item").should("have.length", booksLength); 
+})
+
   // SCREENSHOTS
   it.skip("should make 2 screenshots", () => {
   cy.screenshot( { capture: "fullPage"} );
