@@ -8,7 +8,7 @@ module.exports = defineConfig({
     viewportHeight: 600, // 600 is defalut 
     waitForAnimations: true, // cypres should wait for animation to finish or not (true recommended)
     animationDistanceTreshold: 20, // number of pixels to be moved to consider an element an animation
-    defaultCommandTimeout: 5000, // (defaultowo jest 4000)
+    defaultCommandTimeout: 5000, // dotyczy czasu komend (defaultowo jest 4000) 
     execTimeout: 60000, // recommended
     pageLoadTimeout: 60000, // recommended
     requestTimeout: 15000, // recommended

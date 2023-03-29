@@ -22,6 +22,9 @@ import './commands'
 // for XPath
 require('@cypress/xpath');
 
+// for cypress-real-events plugin
+import "cypress-real-events";
+
 // for cypress-failed-log
 // require('cypress-failed-log');
 
