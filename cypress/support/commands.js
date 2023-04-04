@@ -52,15 +52,6 @@ Cypress.Commands.add("mylogin", (username, password) => {
     cy.contains("username").should("be.visible");
 })
 
-// SDET 2022 custom command for getting iframes
-Cypress.Commands.add("getiframe", (iframeLocator) => {
-
-    return cy.get(iframeLocator) 
-                .its("0.contentDocument.body") 
-                .should("be.visible") 
-                .then(cy.wrap); 
-
-})
 
 
 

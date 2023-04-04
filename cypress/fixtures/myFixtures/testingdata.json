@@ -1,4 +1,5 @@
 {
     "imionko": "username",
-    "haselko": "password"
+    "haselko": "password",
+    "stronka": "http://uitestingplayground.com/"
 }

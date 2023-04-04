@@ -7,6 +7,7 @@ intelligent code completion (reference)
 mocha syntax
 scripts (npm vs npx)
 selectors
+uncaught exceptions
 xpath installation & example
 */
 
@@ -109,6 +110,19 @@ cy.get("[attribute='value']") - gets attribute with value
 cy.get("h1[attribute='value']") - gets tag of attribute with value
 cy.get(".class[attribute='value'") - gets class of attribute with value
 cy.get("input.class[attribute='value'") - gets tag of class of attribute with value
+*/
+
+// ----------------------------
+
+/* UNCAUGHT EXCEPTIONS
+1) create "./support/exceptions.js" file;
+2) in that file: 
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        // returning false here prevents Cypress from
+        // failing the test
+        return false
+    })
+3) in e2e.js: import "./exceptions";
 */
 
 // ----------------------------

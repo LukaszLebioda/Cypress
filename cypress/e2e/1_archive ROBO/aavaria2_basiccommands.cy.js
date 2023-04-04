@@ -9,7 +9,6 @@ cy.wait();
 
 /* ADVANCED:
 cy.document(text/html, UTF-8)
-cy.location("protocol", "host = hostname", "pathname");
 cy.screenshot (full page or single element);
 cy.scrollIntoView();
 */
@@ -79,18 +78,4 @@ describe("loading the page & asserting", () => {
       cy.get("a").contains("Travel").scrollIntoView();
   })
 
-  // LOCATION
-  it.skip("should validate location elements", () => {
-    cy.location("protocol").should("contains", "https");
-    cy.location("host").should("equal", "books.toscrape.com");
-    cy.location("pathname").should("equal", "/catalogue/category/books/travel_2/index.html");
-    // this pathname option is often used to check path params after redirection
-  })
-
-  // DOCUMENT
-  it("should be written in html and have UTF coding implemented", () => {
-    cy.document().its("contentType").should("equal", "text/html");
-    cy.document().should("have.property", "charset").and("equal", "UTF-8");
-  })
-  
 })

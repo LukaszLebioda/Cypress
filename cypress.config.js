@@ -22,6 +22,10 @@ module.exports = defineConfig({
       require('cypress-failed-log/on')(on)
     },
 
+    env: {
+      demoVariable: "Hello from Cypress.config.js file!",
+      demoWebsite: "https://www.globalsqa.com/"
+    }
   },
 });
 

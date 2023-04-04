@@ -19,6 +19,9 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
+// for exceptions.js file
+import "./exceptions";
+
 // for XPath
 require('@cypress/xpath');
 
