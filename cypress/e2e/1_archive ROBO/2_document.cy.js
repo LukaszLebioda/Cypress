@@ -78,7 +78,7 @@ describe.skip("handling cookies", () => {
         cy.visit("http://zero.webappsecurity.com/login.html")
     })
 
-    it("handling coockies with document object commands", () => {
+    it("handling coocies with document object commands", () => {
        cy.document().should( (doc) => {
         // create cookie with should (no cy command used)
         doc.cookie = "username=Lookash" // same as: console => document.cookie = "username=Lookash"
@@ -102,12 +102,12 @@ describe.skip("handling cookies", () => {
         // create
         cy.setCookie("password", "buzzy123")
         // read
-        cy.getCookie("password") // visible in the cypress gui devtools // cy.getCookies() to get all the cookies
+        cy.getCookie("password") // visible in the cypress gui devtools; cy.getCookies() to get all the cookies
         // update
         cy.setCookie("password", "buzzy1234567")
         cy.getCookie("password")
         // delete
-        cy.clearCookie("password") // visible in the cypress gui devtools // cy.clearCookies() to clear all the cookies
+        cy.clearCookie("password") // visible in the cypress gui devtools; cy.clearCookies() to clear all the cookies
 
      });
 });

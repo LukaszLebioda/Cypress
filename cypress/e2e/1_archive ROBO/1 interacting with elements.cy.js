@@ -60,14 +60,7 @@ describe.skip("test 2 - select boxes, dropdowns, radio buttons", () => {
         cy.url().should("include", "testcafe");
         cy.title().should("eq", "TestCafe Example Page"); // include, equal, contain
     })
-    it("should select an option from select-box", () => {
-        cy.get("#preferred-interface").select("Both");
-        cy.get("#preferred-interface").should("have.value", "Both");
-        cy.wait(2000);
-
-        cy.get("#preferred-interface").select("JavaScript API").should("have.value", "JavaScript API");
-        cy.get("select#preferred-interface").parent("fieldset").should("not.contain", "click me");
-    })
+    
 })
 
 // describe("Screenshots", () => {

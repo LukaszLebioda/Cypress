@@ -9,7 +9,7 @@ setItem - getItem - clearLocalStorage()
 */
 
 
-describe.skip("hash, host, pathname, protocol", () => {
+describe("hash, host, pathname, protocol", () => {
 
     beforeEach( () => {
         cy.visit("http://uitestingplayground.com/") 
@@ -32,7 +32,7 @@ describe.skip("hash, host, pathname, protocol", () => {
     });
 });
 
-describe.skip("page reload", () => {
+describe("page reload", () => {
 
     before( () => {
         cy.visit("http://uitestingplayground.com/") 
@@ -49,7 +49,7 @@ describe.skip("page reload", () => {
     });
 });
 
-describe.skip("page navigation", () => {
+describe("page navigation", () => {
 
     before( () => {
         cy.visit("http://uitestingplayground.com/") 
