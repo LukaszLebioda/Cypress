@@ -31,3 +31,8 @@ import "cypress-real-events";
 // for cypress-failed-log
 // require('cypress-failed-log');
 
+// for cy-verify-downloads
+require('cy-verify-downloads').addCustomCommand();
+
+
+

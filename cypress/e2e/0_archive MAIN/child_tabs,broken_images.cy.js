@@ -36,7 +36,7 @@ describe.skip("child tabs - approach 1 (removing target attribute)", () => {
     });
 });
 
-describe("child tabs - approach 2 (removing target attribute)", () => {
+describe("child tabs - approach 2 (capturing the 'a href' element)", () => {
 
     it("should capture the 'a href' element", () => {
         cy.visit("https://demoqa.com/links");
@@ -54,3 +54,31 @@ describe("child tabs - approach 2 (removing target attribute)", () => {
     })
 
 })
+
+// -----------------------------------
+
+describe("Broken images", () => {
+
+    beforeEach(() => {
+        cy.visit("https://demoqa.com/broken")
+    });
+
+    it("image NOT broken - assertion", () => {
+        cy.get("div > img[src='/images/Toolsqa.jpg']")
+            .should("be.visible") 
+            .and( ($img) => { // SHOULD + AND => expect assertions only, no cy.*() commands
+                expect($img[0].naturalWidth).to.be.greaterThan(0)
+            })
+    });
+
+    // broken image is also visible in the DOM, so should("be.visible") will bring false positive result
+    // we have to acces the yielded image in the devtools instead (console) and get the naturalWidth property (which is 0 when a broken image is involved)
+    it("image broken - assertion", () => {
+        cy.get("div > img[src='/images/Toolsqa_1.jpg']")
+            .should("be.visible") 
+            .then( ($img) => { // THEN => there can be cy.*() commands involved
+                cy.log("Yielded image: ", $img)
+                expect($img[0].naturalWidth).to.be.greaterThan(0)
+            }) 
+    });
+});

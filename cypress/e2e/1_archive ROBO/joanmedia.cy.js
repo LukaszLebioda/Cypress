@@ -15,13 +15,6 @@ describe.skip("basics", () => {
         }) 
     })
 
-    it("CONTAINS, FIND", () => {
-        cy.visit("http://uitestingplayground.com/dynamicid")
-        cy.contains("Button with Dynamic ID").should("have.class", "btn-primary")
-        cy.get("div").find("button").should("have.text", "Button with Dynamic ID")
-        cy.get("button[type='button']").should("have.attr", "type")
-    })
-
     it("XPATH", () => {
         cy.visit("http://uitestingplayground.com/classattr")
         

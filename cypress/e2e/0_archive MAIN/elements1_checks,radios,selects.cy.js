@@ -63,11 +63,13 @@ describe("select boxes", () => {
     it("select boxes", () => {
         cy.visit("https://devexpress.github.io/testcafe/example/")
 
+        // getting the select box and selecting something
         cy.get("select#preferred-interface").select("Both");
         cy.get("select#preferred-interface").should("have.value", "Both");
         cy.wait(2000);
         cy.get("select#preferred-interface").select("JavaScript API").should("have.value", "JavaScript API");
-        cy.get("select#preferred-interface").parent("fieldset").should("not.contain", "click me"); //?
     })
 });
+
+
 

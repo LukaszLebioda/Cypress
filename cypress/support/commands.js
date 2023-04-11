@@ -34,6 +34,12 @@
 // for Cypress commands (otherwise we would have to write this in every file.cy.js file)
 /// <reference types="cypress" />
 
+// for cypress-file-upload custom commands
+import 'cypress-file-upload';
+
+// for Cypress Testing Library plugin
+import '@testing-library/cypress/add-commands';
+
 // my custom command to load the page
 Cypress.Commands.add("myvisit", (enterUrl, checkUrl, element) => {
     cy.visit(enterUrl, { timeout: 10000 });

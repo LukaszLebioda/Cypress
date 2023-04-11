@@ -1,5 +1,8 @@
 const { defineConfig } = require("cypress");
 
+// for cy-verify-downloads
+const { verifyDownloadTasks } = require('cy-verify-downloads');
+
 module.exports = defineConfig({
   e2e: {
     // baseUrl: "your url goes here", (jak pracujemy nad jedną stroną, to można tu ją zakodować)
@@ -19,12 +22,15 @@ module.exports = defineConfig({
     
     setupNodeEvents(on, config) {
       // https://github.com/bahmutov/cypress-failed-log
-      require('cypress-failed-log/on')(on)
+      require('cypress-failed-log/on')(on),
+      // https://www.npmjs.com/package/cy-verify-downloads
+      on('task', verifyDownloadTasks)
     },
 
     env: {
       demoVariable: "Hello from Cypress.config.js file!",
-      demoWebsite: "https://www.globalsqa.com/"
+      demoWebsite: "https://www.globalsqa.com/",
+      demoWebsite2: "https://demoqa.com"
     }
   },
 });

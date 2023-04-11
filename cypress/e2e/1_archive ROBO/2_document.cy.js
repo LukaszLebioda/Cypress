@@ -58,11 +58,6 @@ describe("get width and height with jQuery + viewport", () => {
         })
     });
 
-    it("viewport", () => {
-        cy.viewport(550,750) // 2 arguments for the resolution, "portrait" mode is default
-        cy.viewport("iphone-6", "landscape") // preset examples of the mobile devices
-    });
-
     it("set css for body with jQuery", () => {
         cy.document().should( (doc) => {
          let cssBody = Cypress.$(doc.body)

@@ -1,3 +1,24 @@
+// ACCORDIONS
+describe("ACCORDIONS", () => {
+
+    beforeEach( () => {
+        cy.visit("https://demoqa.com/accordian")
+    })
+
+    it("accordions", () => {
+
+        // upewniamy się, że kliknięty accordion element jest otwarty 
+        cy.get("#section2Heading").click().next()
+            .should("have.class", "show") 
+            .and("have.css", "display", "block")
+
+        cy.get("#section1Heading").next().should("have.class", "collapse") // upewniamy się, że pierwszy accordion element jest zamknięty
+
+        cy.get("#section3Heading").next().should("have.css", "display", "none") // upewniamy się, że trzeci accordion element jest zamknięty
+    })
+
+})
+
 // DATE PICKER
 describe("DATE PICKER", () => {
 
@@ -23,3 +44,4 @@ describe("DATE PICKER", () => {
         cy.get("input#datePickerMonthYearInput").should("have.value", "08/19/1982")
     });
 });
+
