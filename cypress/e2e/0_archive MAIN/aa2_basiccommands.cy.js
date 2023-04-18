@@ -3,7 +3,8 @@ BASIC:
 cy.visit();
 cy.url();
 cy.title();
-cy.get() => find() / parent () / first() / last() / filter() 
+cy.get() => find() / parent () / first() / last() / eq() / filter() 
+cy.get().find() vs cy.get().within( () => {......} )
 cy.contains()
 cy.pause();
 cy.wait();
@@ -16,15 +17,16 @@ cy.scrollIntoView();
 cy.viewport();
 */
 
-
 describe("list of basic commands", () => {
 
   it("BASIC", () => {
 
+    // URL, TITLE
     cy.visit("https://coding40.eu", { timeout: 10000 });
     cy.url().should("include", "travel");
     cy.title().should("eq", "Travel | Books to Scrape - Sandbox");
 
+    // SELECTORS
     cy.get("h1").contains("Travel").should("be.visible"); // tag name
     cy.get("#promotions").should("exist"); // id
     cy.get("div#promotions").should("exist"); // tag name + id
@@ -33,19 +35,31 @@ describe("list of basic commands", () => {
     cy.get("[role='alert']").should("be.visible"); // attribute
     cy.get("div[role='alert']").should("be.visible"); // tag name + attribute
 
-    cy.get(".product_pod").should("have.length", booksLength); // length (number of elements)
-
+    // FIRST, LAST, EQ()
     cy.get("button").first().click(); // first position in an array of buttons
     cy.get("button").eq(1).click(); // second position in an array of buttons (etc.)
     cy.get("button").last().click(); // last position in an array of buttons
 
+    // FILTER
     cy.get(".price_color").filter(":contains('£36.94')").click(); // filters by attribute-value
-    cy.get("ul").find("li").last().should("be.visible"); // finds elements within other elements
+
+    // FIND, PARENT
+    cy.get(".products > .product").should("have.length", 4) // without find()
+    cy.get("ul").find("li").last().should("be.visible"); // with find()
     cy.get("ul").parent().should("have.class", "side_categories"); // finds parents of elements
 
+    // FIND vs WITHIN
+    cy.get("div").find("h1").should("exist") // finds all h1's in the div
+    cy.get("div").within( () => { // allows to act on multiple elements within an element, and run series of tests (find allows to run a single test only on a single element)
+      cy.get("h1").should("exist")
+      cy.get("p").should("exist")
+})
+
+    // CONTAINS
     cy.contains("some button").should("have.class", "btn-primary");
     cy.get("button").contains("some button").click()
 
+    // PAUSE, WAIT
     cy.pause();
     cy.wait(3000);
   })

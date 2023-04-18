@@ -47,22 +47,11 @@ describe.skip('Retry-ability of Cypress', () => {
         cy.get("#progressBar", {timeout: 60000}).should("have.text", "100%")
     })
 });
+// ----------------------
 
-// there is no cy.hover() in Cypress
-// there are workarounds:
-// cy.get('.menu-item').trigger('mouseover') => triggers a js event (if there is any)
-// cy.get('.hidden').invoke('show').click() => invokes a jQuery function on the yielded element
-describe.skip("Mouseover actions", () => {
-    it.skip("Hover - Cypress workarounds", () => {
-        cy.visit("http://uitestingplayground.com/mouseover")
-        cy.xpath("//div//a[@title='Click me']").trigger("mouseover")
-        cy.xpath("//div//a[@title='Click me']").invoke("show").click()
-    });
-    it("Cypress-real-events plugin", () => {
-        cy.visit("http://uitestingplayground.com/mouseover")
-        cy.contains("Click me").realHover();
-    })
-});
+// I SKIPPED THE DRAG'N'DROP VIDEO!!!
+
+// ----------------------
 
 // dynamic table challenge
 // each() => Iterates through an array or any DOM elements' collection

@@ -57,3 +57,4 @@ describe("Login with aliases", () => {
             .and("contain", "wrong")
     })
 })
+

@@ -27,24 +27,3 @@ describe.skip("login with fixtures", () => {
 
 })
 
-// READ FILE & WRITE FILE
-
-describe.skip("Write / Read data into JSON file / txt file", () => {
-
-    it("should write data into JSON file", () => {
-        cy.writeFile("test.json", { name: "Mike", age: 25 })
-    })
-
-    it("should read & verify data from JSON file", () => {
-        cy.readFile("test.json").its("age").should("eq", 25);
-    })
-
-    it("should write data into text file", () => {
-        cy.writeFile("test.txt", "Hello World!");
-    })
-
-    it("should read & verify data from txt file", () => {
-        cy.readFile("test.txt").should("eq", "Hello World!");
-    })
-
-})

@@ -1,12 +1,14 @@
 /*
 INDEX:
 baseUrl
+Cypress.$ function
+cypress-testing-library plugin
 failed-log plugin
 headless mode
 intelligent code completion (reference)
 mocha syntax
 scripts (npm vs npx)
-selectors
+selectors (CSS, jQuery)
 uncaught exceptions
 xpath installation & example
 */
@@ -16,6 +18,27 @@ xpath installation & example
 1) package.json: "cy:openBase": "cypress open --config baseUrl=http://uitestingplayground.com"
 2) cypress.config.js: e2e: { baseUrl: "http://uitestingplayground.com" }
 3) testspec.cy.js: cy.visit("/textinput")
+*/
+
+// ----------------------------
+/* CYPRESS.$ FUNCTION
+is used on elements to access jQuery methods and use those methods on those elements:
+
+    it("Cypress.$ function example", () => {
+        cy.visit("https://example.cypress.io/commands/actions")
+
+        let header = Cypress.$("button")
+        header.append("buzz")
+    })
+
+*/
+
+// ----------------------------
+/* CYPRESS-TESTING-LIBRARY PLUGIN
+augments get() and find() commands by providing a series of findBy() / findAllBy() commands:
+e.g. cy.findByText("some text")
+
+
 */
 
 // ----------------------------
@@ -100,7 +123,7 @@ or we can write a script, and with the example above: npm run cy:open
 //--------------------------------
 
 /* 
-SELECTORS:
+CSS SELECTORS:
 
 cy.get("h1") - gets tag
 cy.get("h1#id") - gets tag with id
@@ -110,7 +133,12 @@ cy.get("[attribute='value']") - gets attribute with value
 cy.get("h1[attribute='value']") - gets tag of attribute with value
 cy.get(".class[attribute='value'") - gets class of attribute with value
 cy.get("input.class[attribute='value'") - gets tag of class of attribute with value
+
+JQUERY SELECTORS:
+:visible (h3:visible) - selects only visible elements;
 */
+
+
 
 // ----------------------------
 
