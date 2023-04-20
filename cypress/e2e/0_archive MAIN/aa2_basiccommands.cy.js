@@ -57,7 +57,7 @@ describe("list of basic commands", () => {
 
     // CONTAINS
     cy.contains("some button").should("have.class", "btn-primary");
-    cy.get("button").contains("some button").click()
+    cy.get("button").contains("some button").click({force:true}) // if invisible
 
     // PAUSE, WAIT
     cy.pause();
@@ -65,7 +65,7 @@ describe("list of basic commands", () => {
   })
 
   
-  it("ADVANCED", () => {
+  it("VARIA", () => {
 
     cy.screenshot( { capture: "fullPage"} );
     cy.get("h1").contains("Travel").screenshot();
@@ -77,7 +77,20 @@ describe("list of basic commands", () => {
     cy.viewport(550,750) // 2 arguments for the resolution, "portrait" mode is default
     cy.viewport("iphone-6", "landscape") // preset examples of the mobile devices, with "landscape" mode
 
-
   });
+
+  it("EACH", () => {
+
+    cy.get(".products").as("prods")
+        
+
+    cy.get("@prods").find(".product").each( ($el, index, $elements) => {
+          let elementText = $el.find("h4.product-name").text()
+          if(elementText.includes("Capsicum")){
+              $el.find("button").click()
+          }
+    })
+    
+  })
 
 })

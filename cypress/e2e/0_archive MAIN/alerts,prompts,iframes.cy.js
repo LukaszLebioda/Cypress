@@ -7,9 +7,10 @@ if we want to validate sth, e.g. text of the alert
 */
 
 /*
-Cypress has a catalogue of EVENTS we can use
+Cypress has a catalogue of BROWSER EVENTS it listens to
 e.g. window:alert or window:confirm;
-to listen to those events we use cy.on()
+Cypress listens to those events, so we can use cy.on() 
+to trigger (fire) and capture the event 
 */
 
 describe("JavaScript ALERTS & PROMPTS", () => {
@@ -21,9 +22,9 @@ describe("JavaScript ALERTS & PROMPTS", () => {
     it.skip("regular alert with OK only", () => {
         cy.get("button[onclick='jsAlert()']").click()
         cy.on("window:alert", ( (alert) => {
-            expect(alert).to.contain("I am a JS Alert") // to.contain = to.contains = to.be.egual
+            expect(alert).to.contain("I am a JS Alert") // to.contain = to.contains = to.be.equal
         }))
-        cy.on("window:alert", () => true) // bez tego też działa, więc nie wiem, po co to jest (patrz niżej)
+        cy.on("window:alert", () => true) // to jest domyślne ustawienie, więc nie trzeba tego pisać (patrz niżej => windows:confirm with "cancel")
         cy.get("p#result").should("have.text", "You successfully clicked an alert")
     });
 
@@ -32,7 +33,7 @@ describe("JavaScript ALERTS & PROMPTS", () => {
         cy.on("window:confirm", ( (alert) => {
             expect(alert).to.contain("I am a JS Confirm") 
         }))
-        cy.on("window:confirm", () => true) // bez tego też działa, więc nie wiem, po co to jest (patrz jeszcze niżej)
+        cy.on("window:confirm", () => true) // to jest domyślne ustawienie, więc nie trzeba tego pisać (patrz niżej => windows:confirm with "cancel")
         cy.get("p#result").should("have.text", "You clicked: Ok")
     });
 
@@ -41,7 +42,7 @@ describe("JavaScript ALERTS & PROMPTS", () => {
         cy.on("window:confirm", ( (alert) => {
             expect(alert).to.contain("I am a JS Confirm") 
         }))
-        cy.on("window:confirm", () => false) // i już wiem, o co chodzi => TRUE jest defaultowym działaniem Cypress, więc zapis z true jest niepotrzebny; ale w tym przypadku chcemy, żeby było FALSE (żeby Cypress zamknął prompta cancelem), więć zapis ten jest już konieczny
+        cy.on("window:confirm", () => false) // domyślnie jest TRUE, ale w tym przypadku chcemy, żeby było FALSE (żeby Cypress zamknął prompta cancelem), więć zapis ten jest już konieczny
         cy.get("p#result").should("have.text", "You clicked: Cancel")
     });
 
@@ -126,7 +127,7 @@ describe("iframes - typing into iframe (with Joan Media)", () => {
 
 // -----------------------------------------------------------
 
-// SDET approach with plugin
+// SDET iframes approach with plugin
 
 import "cypress-iframe" 
 

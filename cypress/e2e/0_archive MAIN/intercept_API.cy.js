@@ -17,7 +17,7 @@ describe.skip("Intercepting (spying) API requests", () => {
         cy.intercept("GET", "https://demoqa.com/created").as("linkStatus")
     })
 
-    it("intecepting API after clicking a link", () => {
+    it("intercepting API after clicking a link", () => {
         cy.get("a#created").click()
         cy.wait("@linkStatus").then( (req) => {
             cy.log("Intercepted request: ", req)

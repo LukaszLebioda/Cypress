@@ -45,44 +45,6 @@ describe.skip("tests 1 - basics", () => {
     })
 }) 
 
-describe.skip("test 2 - select boxes, dropdowns, radio buttons", () => {
 
-    // for visual regression testing
-    it.skip("should override the current time", () => {
-        const date = new Date(2022, 22, 12).getTime() // return a timestamp
-        cy.clock(date);
-        cy.log(date);
-    })
-
-    it("should load practice website in HD resolution", () => {
-        cy.viewport(1280, 720) // width and height of HD resolution
-        cy.visit("https://devexpress.github.io/testcafe/example/");
-        cy.url().should("include", "testcafe");
-        cy.title().should("eq", "TestCafe Example Page"); // include, equal, contain
-    })
-    
-})
-
-// describe("Screenshots", () => {
-//     it("full page screenshot", () => {
-//         cy.visit("https://devexpress.github.io/testcafe/example/")
-//         // cy.wait - optional; makes sure all the images and animations are laded
-//         cy.screenshot ({capture: "fullPage"})
-//     })
-//     it("single screenshot", () => {
-//         cy.get("header").screenshot()
-//         cy.get("#populate").screenshot()
-//     })
-// })
-
-// describe("Scroll on the page", () => {
-//     it("should scroll down and up on the page", () => {
-//         cy.visit("https://devexpress.github.io/testcafe/example/")
-//         cy.wait(3000)
-//         cy.get("#submit-button").scrollIntoView()
-//         cy.wait(3000)
-//         cy.get("header").scrollIntoView()
-//     })
-// })
 
 

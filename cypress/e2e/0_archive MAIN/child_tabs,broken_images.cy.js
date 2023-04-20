@@ -21,6 +21,7 @@ describe.skip("child tabs - approach 1 (removing target attribute)", () => {
 
     // i następnie usuwamy atrybut target, dzięki czemu strona nie otworzy się w nowym oknie
     // korzystamy z cy.invoke() => "Invoke a function on the previously yielded subject"
+    // w naszym przykładzie (i najczęściej) jest to metoda jQuery (tutaj => removeAttr)
     it("approach 1 - should remove the 'target' attribute", () => {
         cy.get("a").contains("Home").invoke("removeAttr", "target").click()
         
@@ -32,28 +33,30 @@ describe.skip("child tabs - approach 1 (removing target attribute)", () => {
         
         cy.get("div.card-up").should("be.visible").and("have.length", 6) // assertion 2
 
-        cy.go("back") // goes back to the initial tab
+        cy.go("back") // cy.go("forward"), cy.go(-1), cy.go(1) // goes back to the initial tab
     });
 });
 
-describe("child tabs - approach 2 (capturing the 'a href' element)", () => {
+describe("child tabs - approach 2 (capturing the 'href' attribute)", () => {
 
-    it("should capture the 'a href' element", () => {
-        cy.visit("https://demoqa.com/links");
-         
-        cy.get("a#simpleLink").then( (link) => {
-
-           let url = link.prop("href");
-
-           cy.visit(url);
-
+    // we use jQuery prop() method to get the value of a certain property = attribute
+    it("handles child windows", () => {
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice")
+        cy.get("a#opentab").then( (attr) => {
+            let url = attr.prop("href")
+            cy.log(url)
+            cy.visit(url)
         })
+    })
 
         // cy.go(-1)
         // same assertions as above (approach 1) can be applied
-    })
 
 })
+
+// ----------------------------------
+// CHILD WINDOWS
+// Cypress does not support child windows as well
 
 // -----------------------------------
 

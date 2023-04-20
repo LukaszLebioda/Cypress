@@ -1,29 +1,44 @@
 // FIXTURES
 
-// {
-//     "username": "invalid username",
-//     "password": "invalid password"
-// }
+/*
+{
+    "validUsername": "username",
+    "validPassword": "password",
+    "invalidUsername": "fdkjndjfgbfbb",
+    "invalidPassword": "457885440202"
+}
+*/
 
-describe.skip("login with fixtures", () => {
+describe("login with fixtures", () => {
 
-    it("should load the login form", () => {
-        cy.visit("http://zero.webappsecurity.com/login.html");
-        cy.url().should("include", "login.html")
+    beforeEach( () => {
+        cy.visit("http://zero.webappsecurity.com/login.html")
     })
 
-    it("should try to login with invalid credentials", () => {
-        cy.fixture("myFixtures/credentials.json").then( (whatever) => {
-            let username = whatever.username;
-            let password = whatever.password;
+    it("logs json data from fixture", () => {
+        cy.fixture("myFixtures/credentials").then( (loggedData) => {
+            cy.log("Data: ", loggedData)
+        })
+    })
+
+    it("updates json data from fixture", () => {
+        cy.fixture("myFixtures/credentials").then( (loggedData) => {
+            loggedData.invalidUsername = "buzzzzzzzzzz........."
+            cy.log("Updated data: ", loggedData)
+        })
+    })
+
+    it("tries to login with invalid credentials", () => {
+        cy.fixture("myFixtures/credentials.json").then( (data) => {
+
+            let username = data.invalidUsername;
+            let password = data.invalidPassword;
 
             cy.get("input#user_login").clear().type(username);
             cy.get("#user_password").clear().type(password);
             cy.get("input[type='submit']").click();
-            // cy.contains("Login and/or password are wrong.");
             cy.get(".alert").should("contain", "Login and/or password are wrong.")
         })
     })
 
 })
-

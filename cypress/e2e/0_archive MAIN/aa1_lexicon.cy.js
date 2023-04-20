@@ -10,7 +10,7 @@ mocha syntax
 scripts (npm vs npx)
 selectors (CSS, jQuery)
 uncaught exceptions
-xpath installation & example
+xpath installation & example (with selectorhub & chropath)
 */
 
 // ----------------------------
@@ -162,6 +162,7 @@ XPATH INSTALLATION:
 1) install XPath plugin: npm install -D @cypress/xpath
 2) e2e.js: require('@cypress/xpath');
 3) https://selectorshub.com/: install XPath selector hub for Chrome;
+4) there is also a ChroPath plugin...
 
 syntax example:
 cy.xpath("//h5").should("be.visible").and("have.length", 1)

@@ -1,7 +1,7 @@
-// there is no such thing as cy.hover() in Cypress
-// there are workarounds however:
+// there is no such thing as cy.hover() in Cypress, there are workarounds however:
 // cy.get('.menu-item').trigger('mouseover') => triggers a js event (if there is any)
 // cy.get('.hidden').invoke('show').click() => invokes a jQuery function on the yielded element
+// or we can use .realHover() that comes with "cypress-real-events" plugin
 describe.skip("Mouseover actions", () => {
     it("Hover - Cypress workarounds", () => {
         cy.visit("http://uitestingplayground.com/mouseover")
@@ -11,6 +11,15 @@ describe.skip("Mouseover actions", () => {
     it("Cypress-real-events plugin", () => {
         cy.visit("http://uitestingplayground.com/mouseover")
         cy.contains("Click me").realHover();
+    })
+    it.only("another example from SQA Cypress tutorial", () => {
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+        cy.get("div.mouse-hover-content").invoke("show");
+
+        cy.contains("Top").click(); // or => cy.contains("Top").click({force:true})
+        
+        cy.url().should("include", "top")
+
     })
 });
 

@@ -39,6 +39,10 @@ describe.skip("radiobuttons & checkboxes", () => {
         // inny sposób na wybranie pierwszego i ostatniego (po indeksie)
         cy.get("input[type='checkbox']").eq(0).should("be.checked")
         cy.get("input[type='checkbox']").eq(1).should("be.checked")
+
+        // i jeszcze inny, polegający na podaniu value:
+        cy.get("input[type='checkbox']").check( ["valueOfCheckbox"] ) // multiple allowed
+
     })
 
     it("radiobuttons", () => {
@@ -59,8 +63,11 @@ describe.skip("radiobuttons & checkboxes", () => {
 
 })
 
-describe("select boxes", () => {
-    it("select boxes", () => {
+describe("select boxes / dropdowns - static & dynamic", () => {
+
+    // STATIC DROPDOWNS - there is a list of values to be selected provided
+    // tags: select & option are obligatory
+    it("select boxes / dropdowns: STATIC", () => {
         cy.visit("https://devexpress.github.io/testcafe/example/")
 
         // getting the select box and selecting something
@@ -69,6 +76,27 @@ describe("select boxes", () => {
         cy.wait(2000);
         cy.get("select#preferred-interface").select("JavaScript API").should("have.value", "JavaScript API");
     })
+
+        // DYNAMIC DROPDOWNS - we have to type sth to get the hints to be selected
+        it("select boxes / dropdowns: DYNAMIC", () => {
+            
+            cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+            // no select, no option tags, just input text with autocomplete feature
+            cy.get("input#autocomplete[type='text']").type("pol") 
+            // after typing "pol" now we have 3 options displayed, from which we have to select "Poland"
+            // we can do this statically: cy.get("ul#ui-id-1").find("li").eq(2).click()
+            // but actually we don't know, wich position "Poland" will be in
+    
+            // so we use EACH() to iterate through li items and find a match
+            cy.get("ul#ui-id-1").find("li.ui-menu-item").each( ($item, index, $items) => {
+                let itemText = $item.text()
+                if(itemText == "Poland") {
+                    $item.click()
+                }
+            })
+            cy.get("input#autocomplete[type='text']").should("have.value", "Poland")
+
+        })
 });
 
 
