@@ -88,6 +88,9 @@ describe.skip("authenticated alert", () => {
 
 // IFRAMES
 
+// we have to say Cypress somehow, that want we want to do
+// is not part of main html, but of sub-html frame
+
 describe.skip("iframes - parent iframe & child iframe (with Joan Media)", () => {
 
     beforeEach(() => {
@@ -127,13 +130,17 @@ describe("iframes - typing into iframe (with Joan Media)", () => {
 
 // -----------------------------------------------------------
 
-// SDET iframes approach with plugin
+// iframes approach with plugin
 
+// first line: to get auto-suggestions
+// second line: to import the plugin
+
+/// <reference types="cypress-iframe" />
 import "cypress-iframe" 
 
-describe.skip("handling iFrames with SDET 2022", () => {
+describe.skip("handling iFrames with plugin: SDET 2022", () => {
 
-    it("iframe plugin", () => {
+    it("iframe plugin SDET", () => {
         cy.visit("https://the-internet.herokuapp.com/iframe");
         
         // cypress-iframe plugin command to load an iframe
@@ -142,6 +149,22 @@ describe.skip("handling iFrames with SDET 2022", () => {
         cy.iframe("iframe#mce_0_ifr").clear().type("Approach 2 {ctrl+a}");
 
         cy.get("[aria-label='Bold']").click(); 
+    })
+
+})
+
+describe("handling iFrames with plugin: SQA Rahul Shetty", () => {
+
+    it("iframe plugin SQA", () => {
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+        
+        // cypress-iframe plugin command to load an iframe into cy object
+        // to tell cy what it should focus on
+        cy.frameLoaded("iframe#courses-iframe");
+        // cypress-iframe plugin command to interact with the iframe
+        cy.iframe().contains("a", "Mentorship").last().click({force:true}); 
+
+        cy.iframe().find("div.inner-box h1").should("be.visible")
     })
 
 })

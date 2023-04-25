@@ -51,13 +51,26 @@ Cypress.Commands.add("myvisit", (enterUrl, checkUrl, element) => {
 Cypress.Commands.add("mylogin", (username, password) => {
     cy.clearCookies();
     cy.clearLocalStorage();
-    cy.get("#user_login").clear().type(username);
-    cy.get("#user_password").clear().type(password);
-    cy.get("#user_remember_me").click();
-    cy.get("input[type='submit']").click();
-    cy.contains("username").should("be.visible");
+    cy.get("input#userName").clear().type(username);
+    cy.get("input#password").clear().type(password);
+    // cy.get("#user_remember_me").click();
+    cy.get("button#login").click();
+    cy.url().should("include", "profile")
 })
 
+// LAMBDA EXAMPLES for setting & getting local storage data
+// setting, so bot key and value are needed
+Cypress.Commands.add("setLocalStorage", (key, value) => {
+    cy.window().then( (win) => {
+        win.localStorage.setItem(key, value)
+    })
+})
+// getting only by the item's key
+Cypress.Commands.add("getLocalStorage", (key) => {
+    cy.window().then( (win) => {
+        return win.localStorage.getItem(key)
+    })
+})
 
 
 

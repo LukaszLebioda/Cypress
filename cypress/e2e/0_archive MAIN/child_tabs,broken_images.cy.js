@@ -58,6 +58,21 @@ describe("child tabs - approach 2 (capturing the 'href' attribute)", () => {
 // CHILD WINDOWS
 // Cypress does not support child windows as well
 
+describe.skip("handling child windows", () => {
+  
+    // we use jQuery prop() method to get the value of a certain property = attribute
+    it("handles child windows", () => {
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice")
+        cy.get("a#opentab").then( (attr) => {
+            let url = attr.prop("href")
+            cy.log(url)
+            cy.visit(url)
+        })
+    })
+  
+});
+
+
 // -----------------------------------
 
 describe("Broken images", () => {

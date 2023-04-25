@@ -1,5 +1,27 @@
 {
-    "imionko": "username",
-    "haselko": "password",
-    "stronka": "http://uitestingplayground.com/"
+    "users": [
+        {
+            "valid": true,
+            "username": "username",
+            "password": "password",
+            "stronka": ""
+        },
+        {
+            "valid": false,
+            "imionkusername": "badusername",
+            "password": "badpassword",
+            "stronka": ""  
+        }
+    ],
+    "users2": 
+    {
+       "imionko": "wrong",
+       "haselko": "",
+       "email": "",
+       "gender": "Male"
+    }
+    
 }
+
+
+

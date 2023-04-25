@@ -4,6 +4,7 @@ baseUrl
 Cypress.$ function
 cypress-testing-library plugin
 failed-log plugin
+global hooks
 headless mode
 intelligent code completion (reference)
 mocha syntax
@@ -58,6 +59,19 @@ FAILED-LOG PLUGIN
 
 // ----------------------------
 
+/* GLOBAL HOOKS
+we can write in e2e.js:
+
+    beforeEach( () => {
+        cy.log("I'm a message that is coming from a global be hook!")
+    })
+
+and it is going to be global!
+
+It's is most commonly used with cy.session()
+*/
+
+// ----------------------------
 /*
 HEADLESS MODE
 
@@ -162,7 +176,7 @@ XPATH INSTALLATION:
 1) install XPath plugin: npm install -D @cypress/xpath
 2) e2e.js: require('@cypress/xpath');
 3) https://selectorshub.com/: install XPath selector hub for Chrome;
-4) there is also a ChroPath plugin...
+4) xpath in the console summary: "https://quickref.me/xpath.html";
 
 syntax example:
 cy.xpath("//h5").should("be.visible").and("have.length", 1)

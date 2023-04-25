@@ -34,5 +34,11 @@ import "cypress-real-events";
 // for cy-verify-downloads
 require('cy-verify-downloads').addCustomCommand();
 
+// GLOBAL HOOK (see lexicon)
+// just uncomment and it's on!
+// beforeEach( () => {
+//     cy.log("I'm a message that is coming from a global be hook!")
+// })
+
 
 

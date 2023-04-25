@@ -1,4 +1,8 @@
 // CUSTOM COMMANDS
+// we can write our own custom commands (eg. for setting local storage files)
+// or we can overwrite existing ones (e.g. to hide sensitive login data)
+
+// CUSTOM COMMANDS - NEW ONES
 
 // location: ./support/command.js
 
@@ -47,6 +51,8 @@ describe.skip("Login with custom commands", () => {
 
     })
 })
-z
+
+
+
 
 
