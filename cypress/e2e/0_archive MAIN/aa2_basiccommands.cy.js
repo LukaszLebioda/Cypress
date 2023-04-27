@@ -8,7 +8,11 @@ cy.get().find() vs cy.get().within( () => {......} )
 cy.contains()
 cy.pause();
 cy.wait();
+cy.debug();
 */
+
+// overwriting default cypress confuguration in a test
+// Cypress.config('defaultCommandTimeout', 10000)
 
 /* 
 ADVANCED:
@@ -60,7 +64,8 @@ describe("list of basic commands", () => {
     cy.get("button").contains("some button").click({force:true}) // if invisible
 
     // PAUSE, WAIT
-    cy.pause();
+    cy.pause(); // used for debugging; can be chained;
+    cy.debug(); // used for debugging; can be chained;
     cy.wait(3000);
   })
 

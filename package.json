@@ -6,8 +6,9 @@
   "scripts": {
     "cy:open": "cypress open --e2e --browser chrome",
     "cy:openBaseUrl": "cypress open --config baseUrl=http://uitestingplayground.com",
-    "cy:run": "cypress run",
-    "cy:runOne": "cypress run --spec 'cypress/e2e/practice_now.cy.js'"
+    "cy:runAll": "cypress run",
+    "cy:runOne": "cypress run --spec 'cypress/e2e/apitesting.cy.js'",
+    "cy:runOneHeaded": "cypress run --headed --spec 'cypress/e2e/*(folderName, fileName).js'"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "cypress-failed-log": "^2.10.0",
     "cypress-file-upload": "^5.0.8",
     "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^3.4.0",
     "cypress-real-events": "^1.7.6",
     "typescript": "^4.9.5"
   }

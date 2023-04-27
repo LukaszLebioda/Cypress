@@ -34,6 +34,9 @@ import "cypress-real-events";
 // for cy-verify-downloads
 require('cy-verify-downloads').addCustomCommand();
 
+// for cypress-mochawesome-reporter
+import 'cypress-mochawesome-reporter/register';
+
 // GLOBAL HOOK (see lexicon)
 // just uncomment and it's on!
 // beforeEach( () => {

@@ -18,20 +18,30 @@ module.exports = defineConfig({
     responseTimeout: 15000, // recommended
     video: false, // defaultowo jest false, true - nagrywa nasze testy w headless mode;
     failOnStatusCode: false,
-    // excludeSpecPattern: "**/2-advanced-examples/*", (wyklucza z wykonywania testu konkretne pliki / foldery)
+    // excludeSpecPattern: "**/2-advanced-examples/*", (wyklucza z wykonywania testu konkretne pliki / foldery),
+    reporter: 'cypress-mochawesome-reporter',
+    reporterOptions: {
+      charts: true,
+      reportPageTitle: 'my title',
+      embeddedScreenshots: true,
+      inlineAssets: true,
+      saveAllAttempts: false,
+    },
     
     setupNodeEvents(on, config) {
       // https://github.com/bahmutov/cypress-failed-log
       require('cypress-failed-log/on')(on),
       // https://www.npmjs.com/package/cy-verify-downloads
-      on('task', verifyDownloadTasks)
+      on('task', verifyDownloadTasks),
+      require('cypress-mochawesome-reporter/plugin')(on)
     },
 
     env: {
       demoVariable: "Hello from Cypress.config.js file!",
       demoWebsite: "https://www.globalsqa.com/",
       demoWebsite2: "https://demoqa.com",
-      navbarText: "cypress.io"
+      navbarText: "cypress.io",
+      sqaWebsite: "https://rahulshettyacademy.com"
     }
   },
 });

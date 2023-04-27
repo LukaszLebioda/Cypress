@@ -1,7 +1,7 @@
 // Page Object Class:
 class Login {
 
-    // variables for selectors
+    // variables for selectors used in methods below
     usernameSelector = "input#userName";
     passwordSelector = "input#password";
     loginButtonSelector = "button#login";
@@ -37,5 +37,5 @@ class Login {
     }
 
 }
-/* SDET 2022 */ export default Login;
+/* SDET 2022, SQA Step By Ste */ export default Login;
 /* JoanMedia */ // export const LoginPage = new Login(); 

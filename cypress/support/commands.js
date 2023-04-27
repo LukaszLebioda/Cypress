@@ -72,5 +72,15 @@ Cypress.Commands.add("getLocalStorage", (key) => {
     })
 })
 
+// SQA example for adding to cart scenario
+Cypress.Commands.add("selectMobile", (mobileName) => {
+    cy.get("h4.card-title a").each( ($item, index, $items) => {
+        let item = $item.text()
+        if(item.includes(mobileName)){
+            // we use index from each() to click a proper add-to-cart-button
+            cy.get("button.btn.btn-info").eq(index).click()
+        }
+    })
+})
 
 

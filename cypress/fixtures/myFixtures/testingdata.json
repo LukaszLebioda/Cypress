@@ -18,7 +18,8 @@
        "imionko": "wrong",
        "haselko": "",
        "email": "",
-       "gender": "Male"
+       "gender": "Male",
+       "mobileName": ["Blackberry", "Nokia", "Samsung"]
     }
     
 }
