@@ -56,7 +56,7 @@ describe.skip("no POM involved", () => {
 - like this: "const LoginPage = new Login();"
 */
 
-import Login from "../PageObjects/LoginPage.js"
+import Login from "../support/PageObjects/LoginPage.js"
 
 describe("with POM", () => {
 

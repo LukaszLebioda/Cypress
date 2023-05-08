@@ -1,3 +1,4 @@
+// BASIC HTTP REQUESTS' TESTING
 // cy.request(url) = fetch(url)
 
 describe.skip("API - basic http requests' testing", () => {
@@ -5,8 +6,8 @@ describe.skip("API - basic http requests' testing", () => {
     it("GET request", () => {
         cy.request("GET", "https://jsonplaceholder.typicode.com/posts/1").then( (res) => {
             cy.log("response: ", res)
-            expect(res.status).to.equal(200)
-            expect(res.statusText).to.equal("OK")
+            expect(res.status).to.equal(2003)
+            expect(res.statusText).to.equal("dffgOK")
         })
     })
 
@@ -47,6 +48,8 @@ describe.skip("API - basic http requests' testing", () => {
 })
 
 // ---------------------------------------
+
+// the idea of API testing here is to test e.g. login functionality, but beyond UI
 
 describe("advanced API testing scenario from JoanMedia", () => {
     it('', () => {

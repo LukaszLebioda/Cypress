@@ -1,0 +1,134 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-04-28T07:34:28.595Z",
+    "end": "2023-04-28T07:34:58.831Z",
+    "duration": 30236,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c485447d-e75c-441b-9586-73477d7c5e2b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\0_archive MAIN\\asynchronous,then(),fetchAPI.cy.js",
+      "file": "cypress\\e2e\\0_archive MAIN\\asynchronous,then(),fetchAPI.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "40e60ab6-5976-4090-9e43-ca04df507317",
+          "title": "LAMBDA",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "wsdwsd",
+              "fullTitle": "LAMBDA wsdwsd",
+              "timedOut": null,
+              "duration": 8598,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://example.cypress.io/commands/actions\");\ncy.findByPlaceholderText(\"Email\").type(\"test@email.com\");\ncy.wait(3000);\n// Cypress acts asynchronously when we are not using cypress commands!!\nconsole.log(\"Test is finished - console.log() without .then()\"); // it's asynchronous, so it runs first\ncy.log(\"Test is finished\"); // it's synchronous, so it runs last\n//cy.log() above is only for logging; we can not do anything with it\n// e.g. we ca not store it it a variable or such\n// but we can use .then() to run a CY command, and when this command successfully executes\n// it can run another commands (even if it's not a CY command):\ncy.findByPlaceholderText(\"Email\").type(\"test@email.com\");\ncy.wait(3000).then(() => {\n  console.log(\"Test is finished - console.log() with .then()\");\n  fetch(\"https://api.spacexdata.com/v3/missions\").then(res => res.json()).then(data => {\n    console.log(data);\n  });\n});",
+              "err": {},
+              "uuid": "c966be66-960d-460e-a60a-bdcbb5c94e93",
+              "parentUUID": "40e60ab6-5976-4090-9e43-ca04df507317",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "another example",
+              "fullTitle": "LAMBDA another example",
+              "timedOut": null,
+              "duration": 5436,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      {\n        \"title\": \"Failed screenshot\",\n        \"value\": \"\\\\0_archive MAIN\\\\asynchronous,then(),fetchAPI.cy.js\\\\LAMBDA -- another example (failed).png\"\n      }\n    ],\n    [\n      {\n        \"title\": \"Failed screenshot\",\n        \"value\": \"\\\\0_archive MAIN\\\\asynchronous,then(),fetchAPI.cy.js\\\\LAMBDA -- another example (failed) (attempt 2).png\"\n      }\n    ],\n    [\n      {\n        \"title\": \"Failed screenshot\",\n        \"value\": \"\\\\0_archive MAIN\\\\asynchronous,then(),fetchAPI.cy.js\\\\LAMBDA -- another example (failed) (attempt 3).png\"\n      }\n    ]\n  ]\n}",
+              "code": "// this won't work, because const is JS and text() is jQuery:\n// const logo = cy.get(\"div.greenLogo\"); \n// cy.log(logo.text());\n// but this will (we're manually resolving the promise):\ncy.get(\"div.greenLogo\").then(logo => {\n  let textLogo = logo.text();\n  cy.log(textLogo);\n  expect(textLogo).to.be.equal(\"GREENKART\");\n});\n// another way:\ncy.get(\".greenLogo\").should(\"have.text\", \"GREENKART\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 5000ms: Expected to find element: `div.greenLogo`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 5000ms: Expected to find element: `div.greenLogo`, but never found it.\n    at Context.eval (https://example.cypress.io/__cypress/tests?p=cypress\\e2e\\0_archive%20MAIN\\asynchronous,then,fetchAPI.cy.js:131:8)",
+                "diff": null
+              },
+              "uuid": "f1c4e544-9cf4-4828-a1a7-ac1d8dd140cb",
+              "parentUUID": "40e60ab6-5976-4090-9e43-ca04df507317",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c966be66-960d-460e-a60a-bdcbb5c94e93"
+          ],
+          "failures": [
+            "f1c4e544-9cf4-4828-a1a7-ac1d8dd140cb"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 14034,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "my title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

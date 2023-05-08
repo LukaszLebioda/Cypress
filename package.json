@@ -8,7 +8,8 @@
     "cy:openBaseUrl": "cypress open --config baseUrl=http://uitestingplayground.com",
     "cy:runAll": "cypress run",
     "cy:runOne": "cypress run --spec 'cypress/e2e/apitesting.cy.js'",
-    "cy:runOneHeaded": "cypress run --headed --spec 'cypress/e2e/*(folderName, fileName).js'"
+    "cy:runOneHeaded": "cypress run --headed --spec 'cypress/e2e/apitesting.cy.js'",
+    "cy:runOneEnv": "cypress run --spec 'cypress/e2e/apitesting.cy.js' --env urlTerminalEnv=https://google.com"
   },
   "repository": {
     "type": "git",

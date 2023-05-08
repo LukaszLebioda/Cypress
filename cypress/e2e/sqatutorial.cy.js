@@ -40,8 +40,8 @@
 */
 
 // we're importing the class
-import LoginSQA from "../PageObjects/SQAHomePage.js";
-import ProductSQA from "../PageObjects/SQAProductPage.js";
+import LoginSQA from "../support/PageObjects/SQAHomePage.js";
+import ProductSQA from "../support/PageObjects/SQAProductPage.js";
 
 describe("fixtures, custom commands, pom approach", () => {
 

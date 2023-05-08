@@ -4,6 +4,7 @@ const { defineConfig } = require("cypress");
 const { verifyDownloadTasks } = require('cy-verify-downloads');
 
 module.exports = defineConfig({
+  projectId: 'gcpj78',
   e2e: {
     // baseUrl: "your url goes here", (jak pracujemy nad jedną stroną, to można tu ją zakodować; wtedy w teście piszemy: cy.visit("/"))
     watchForFileChanges: true, // (jeśli false, to po po sejwie trzeba ręcznie uruchomić test)
@@ -16,16 +17,21 @@ module.exports = defineConfig({
     pageLoadTimeout: 60000, // recommended
     requestTimeout: 15000, // recommended
     responseTimeout: 15000, // recommended
-    video: false, // defaultowo jest false, true - nagrywa nasze testy w headless mode;
+    video: false, // true - nagrywa testy w headless mode; 
+    screenshotOnRunFailure: true, // robi screenshoty w headless, jeśli test failure
     failOnStatusCode: false,
     // excludeSpecPattern: "**/2-advanced-examples/*", (wyklucza z wykonywania testu konkretne pliki / foldery),
-    reporter: 'cypress-mochawesome-reporter',
-    reporterOptions: {
+    reporter: 'cypress-mochawesome-reporter', 
+    reporterOptions: { // ustawienia mochawesome reportera;
       charts: true,
       reportPageTitle: 'my title',
       embeddedScreenshots: true,
       inlineAssets: true,
       saveAllAttempts: false,
+    },
+    retries: { // określamy, ile razy cy ma ponowić test (osobno dla run i dla open);
+        runMode: 2,
+        openMode: 1
     },
     
     setupNodeEvents(on, config) {
