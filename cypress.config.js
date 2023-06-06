@@ -4,7 +4,7 @@ const { defineConfig } = require("cypress");
 const { verifyDownloadTasks } = require('cy-verify-downloads');
 
 module.exports = defineConfig({
-  projectId: 'gcpj78',
+  projectId: 'wicmv5',
   e2e: {
     // baseUrl: "your url goes here", (jak pracujemy nad jedną stroną, to można tu ją zakodować; wtedy w teście piszemy: cy.visit("/"))
     watchForFileChanges: true, // (jeśli false, to po po sejwie trzeba ręcznie uruchomić test)
