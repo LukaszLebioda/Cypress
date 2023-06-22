@@ -22,20 +22,7 @@ describe("get title / width and height with jQuery + viewport", () => {
     })
 
 
-    // to get width and height of the document 
-    // we use jQuery (cypress has no commands to get width and heigth of the document)
-    it("get width and height with jQuery", () => {
-        cy.document().then( (doc) => {
-            
-            const jQueryObject = Cypress.$(doc)
-            const height = jQueryObject.height()
-            const width = jQueryObject.width()
-
-            console.log("HEIGHT: ", height);
-            console.log("WIDTH: ", width);
-            
-        })
-    });
+    
     it("With CY commands we can only set viewport", () => {
         cy.viewport("ipad-2", "landscape") // or "portrait" (optional)
         cy.viewport(2000, 850, "portrait") // or "landscape" (optional)
@@ -75,7 +62,7 @@ describe.only("handling cookies", () => {
         doc.cookie = "username=LookashUpdated"
         cy.log(doc.cookie)
         console.log(doc.cookie)
-        // we can delete (clear) cookie
+        // we can finally delete (clear) cookie
         doc.cookie = "username="
        })
     });
