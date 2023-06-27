@@ -10,9 +10,7 @@ describe("list of basic commands", () => {
     
 })
 
-    // CONTAINS
-    cy.contains("some button").should("have.class", "btn-primary");
-    cy.get("button").contains("some button").click({force:true}) // if invisible
+
 
     // PAUSE, WAIT
     cy.pause(); // used for debugging; can be chained;

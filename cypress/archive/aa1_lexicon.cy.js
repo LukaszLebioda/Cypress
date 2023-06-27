@@ -93,12 +93,6 @@ context("test block", () => {
     })
 }
 
--------------------------------------------------------
-
-JQUERY SELECTORS:
-:visible (h3:visible) - selects only visible elements;
-*/
-
 // ----------------------------
 
 /* UNCAUGHT EXCEPTIONS
