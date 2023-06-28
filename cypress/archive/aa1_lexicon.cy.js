@@ -17,13 +17,7 @@ uncaught exceptions
 3) testspec.cy.js: cy.visit("/textinput")
 */
 
-// ----------------------------
-/* CYPRESS-TESTING-LIBRARY PLUGIN
-augments get() and find() commands by providing a series of findBy() / findAllBy() commands:
-e.g. cy.findByText("some text")
 
-
-*/
 
 // ----------------------------
 /*

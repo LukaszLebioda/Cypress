@@ -1,6 +1,11 @@
 /*
+https://demoqa.com/
+*/
+
+/*
 ASSERT: expect(buttonText).to.eq(button) = assert.equal(buttonText, button) => BDD vs TDD assertion
 AUTOSUGGESTIONS: /// <reference types="Cypress" /> => to get cypress suggestions (commands.js)
+CYPRESS.CONFIG: Cypress.config('defaultCommandTimeout', 10000) (overwrites locally cy configuration)
 FILTER: cy.get(".price_color").filter(":contains('£36.94')").click(); // filtruje spośród wielu elementów
 FORCE TRUE: cy.get("input#monday").check( {force: true} ) => if element has CSS 'display: none' property
 MULTIPLE TRUE: cy.get("button").eq(-3).click({multiple: true}) => to click more elements at once
@@ -16,6 +21,7 @@ DOM TRAVERSING 2 (children, parent, prev, siblings)
 EACH
 HOOKS & GLOBAL HOOKS
 NAVIGATION (history, go)
+PLUGINS
 RADIO BUTTONS
 RELOAD
 SCRIPTS
@@ -229,6 +235,12 @@ describe("page navigation", () => {
         cy.get("h3").should("be.visible")
     });
 });
+
+// PLUGINS -------------------------------------------------------------------------------------
+/* 
+CYPRESS-TESTING-LIBRARY PLUGIN: augments get() and find() commands by providing a series of findBy() & findAllBy() commands: e.g. cy.findByText("some text");
+
+*/
 
 // RADIO BUTTONS -------------------------------------------------------------------------------
 describe('radio buttons', () => {
