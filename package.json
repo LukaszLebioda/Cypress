@@ -33,7 +33,7 @@
     "@cypress/xpath": "^2.0.3",
     "@testing-library/cypress": "^9.0.0",
     "cy-verify-downloads": "^0.1.14",
-    "cypress": "^12.9.0",
+    "cypress": "^12.17.4",
     "cypress-failed-log": "^2.10.0",
     "cypress-file-upload": "^5.0.8",
     "cypress-iframe": "^1.0.1",
