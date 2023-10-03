@@ -6,7 +6,7 @@ const { verifyDownloadTasks } = require('cy-verify-downloads');
 module.exports = defineConfig({
   projectId: 'wicmv5',
   e2e: {
-    // baseUrl: "your url goes here", (jak pracujemy nad jedną stroną, to można tu ją zakodować; wtedy w teście piszemy: cy.visit("/"))
+    // baseUrl: "your url goes here", (jak pracujemy nad jedną stroną, to można tu ją zakodować; wtedy w teście piszemy: cy.visit("/somethingAfterSlash"))
     watchForFileChanges: true, // (jeśli false, to po po sejwie trzeba ręcznie uruchomić test)
     viewportWidth: 1000, // 1000 is default
     viewportHeight: 600, // 600 is defalut 

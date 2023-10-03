@@ -6,8 +6,6 @@ beforeEach(function() {
     cy.visit('https://reqres.in')
 });
 
-
-
     it('dffsdf', function() {
         cy.intercept('GET', '**/api/users/2').as('user')
         cy.get('[data-key="try-link"]').eq(1).click()
