@@ -1,13 +1,8 @@
-import {basic} from '../support/basic'
+import { navigation } from '../helpers/navigation.ts'
 
-beforeEach(() => {
-    basic.goToPage('joan', 'textInput')
-});
-
-describe('ffff', () => {
-    it('ffff', () => {
-    //   basic.clickElement('#updatingButton')  
-      basic.typeText('#newButtonName', 'whatever{enter}') 
-      
-    })
-});
+describe('basics', () => {
+	it('visit', () => {
+		navigation.goToPage('joan', '/textinput')
+		cy.url().then(url => cy.log(url))
+	})
+})

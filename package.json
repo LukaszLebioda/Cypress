@@ -4,7 +4,7 @@
   "description": "My Cypress practice folder",
   "main": "index.js",
   "scripts": {
-    "cy:open": "cypress open --e2e --browser chrome",
+    "cy": "cypress open --e2e --browser chrome",
     "cy:openBaseUrl": "cypress open --config baseUrl=http://uitestingplayground.com",
     "cy:runAll": "cypress run",
     "cy:runOne": "cypress run --spec 'cypress/e2e/apitesting.cy.js'",
