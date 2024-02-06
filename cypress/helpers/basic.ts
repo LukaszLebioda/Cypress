@@ -1,4 +1,19 @@
 class Basic {
+	/**
+	 * get input field by placeholder
+	 * @param placeholder
+	 */
+	getInput(placeholder: string) {
+		return cy.get(`input[placeholder="${placeholder}"]`)
+	}
+	/**
+	 * type into input field
+	 * @param text
+	 */
+	typeIntoInput(text: string, placeholder: string) {
+		this.getInput(placeholder).type(text)
+	}
+
 	// /**
 	//  * get element by id
 	//  * @param id
